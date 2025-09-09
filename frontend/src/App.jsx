@@ -1,21 +1,22 @@
-import { Routes, Route, Link } from "react-router-dom";
-import Home from "./Home.jsx"
-import "./App.css"
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout.jsx"
+import Main from "./page/main/Main.jsx"
+import Contact from "./page/contact/Contact.jsx"
+import Activities from "./page/activities/Activities.jsx"
 
-export default function App() {
-  return (
-    <div className="main-page">
-      <nav className="main-nav-bar">
-        <Link to="/">首頁</Link> |{" "}
-        {/* <Link to="/about">關於</Link> |{" "}
-        <Link to="/contact">聯絡</Link> */}
-      </nav>
+function App(){		
+	return (
+		<BrowserRouter>
+		  <Layout>
+			<Routes>
+			  <Route path="/" element={<Main />} />
+			  <Route path="/activities" element={<Activities />} />
+			  <Route path="/contact" element={<Contact />} />
+			</Routes>
+		  </Layout>
+		</BrowserRouter>
+	);
+};
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
-      </Routes>
-    </div>
-  );
-}
+export default App;
