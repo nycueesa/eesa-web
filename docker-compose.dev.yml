@@ -1,8 +1,8 @@
 services:
-  frontend-dev:
+  web-frontend-dev:
     # Vite 7+ 需要 Node.js 20+，因此升級基礎映像檔
     image: node:20-alpine
-    container_name: frontend-dev
+    container_name: web-frontend-dev
     ports:
       - 5566:5173
     working_dir: /app
@@ -10,19 +10,19 @@ services:
       # 將本地 frontend 資料夾同步到容器中，實現熱修改
       - ./frontend:/app
       # 使用一個 volume 來緩存 node_modules，避免每次重啟都重新安裝
-      - frontend_node_modules:/app/node_modules
+      - frontend_web_node_modules:/app/node_modules
     # 啟動時先安裝依賴，然後啟動 Vite 開發伺服器
     command: sh -c "npm install && npm run dev"
     # depends_on:
     #   backend:
     #     condition: service_healthy
     networks:
-      - app-network
+      - web-network
 
 networks:
-  app-network:
+  web-network:
     driver: bridge
     name: eesa-web-dev-network
 
 volumes:
-  frontend_node_modules:
+  frontend_web_node_modules:

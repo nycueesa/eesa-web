@@ -8,13 +8,14 @@ import Activities from "./page/activities/Activities.jsx"
 function App(){		
 	return (
 		<BrowserRouter>
-		  <Layout>
-			<Routes>
-			  <Route path="/" element={<Main />} />
-			  <Route path="/activities" element={<Activities />} />
-			  <Route path="/contact" element={<Contact />} />
-			</Routes>
-		  </Layout>
+		  	<Layout>
+				<Routes>
+			  		<Route path="/" element={<Main />} />
+			  		<Route path="/activities" element={<Activities />} />
+			  		<Route path="/contact" element={<Contact />} />
+					
+				</Routes>
+		  	</Layout>
 		</BrowserRouter>
 	);
 };
