@@ -20,8 +20,10 @@ function TopNavbar() {
     <Navbar variant="dark" expand="lg" className="bg-body-tertiary">
       <Container fluid className = "custom-container">
         <Navbar.Brand as={Link} to="/" className = "main-logo">
+          {/* 這裡之後有新icon再換掉 */}
+          <img src="/icon.jpg" className = "Lab-logo" alt="系學會icon"/>
           <div>
-            AiSMART Lab        
+            NYCU-eesa        
           </div>      
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
