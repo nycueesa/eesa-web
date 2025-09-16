@@ -39,7 +39,7 @@ function TopNavbar() {
                           onMouseEnter={() => setShow1(true)}
                           onMouseLeave={() => setShow1(false)}> 
               <NavDropdown.Item as={Link} to="/intro/eesa-intro">關於系學會</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/intro/menber"> 成員</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/intro/member"> 成員</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown  title="活動" 
                           id="basic-nav-dropdown"
@@ -47,6 +47,7 @@ function TopNavbar() {
                           show={show2}
                           onMouseEnter={() => setShow2(true)}
                           onMouseLeave={() => setShow2(false)}> 
+              <NavDropdown.Item as={Link} to="/event/event-intro">活動簡介</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/event/new-info">最新資訊</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/event/timeline">時間軸</NavDropdown.Item>
             </NavDropdown>
