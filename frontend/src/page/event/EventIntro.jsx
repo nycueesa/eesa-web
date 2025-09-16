@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./EventIntro.module.css"
 
-export default function NewInfo(){
+export default function EventIntro(){
 
     return(
         <div className = {styles.eventIntroPage}>
