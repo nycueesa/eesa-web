@@ -15,6 +15,8 @@ import "./Layout.css";
 function TopNavbar() {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+  const [show4, setShow4] = useState(false);
 
   return (
     <Navbar variant="dark" expand="lg" className="bg-body-tertiary">
@@ -30,26 +32,42 @@ function TopNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link className = "nav-main-page" as={Link} to="/" >首頁</Nav.Link>
-            <Nav.Link as={Link} to="/projects">研究計劃</Nav.Link>
-            <Nav.Link as={Link} to="/research_area">研究成果</Nav.Link>
-              <NavDropdown  title="成員介紹" 
-                            id="basic-nav-dropdown"
-                            className="nav-dropdown-members"
-                            show={show1}
-                            onMouseEnter={() => setShow1(true)}
-                            onMouseLeave={() => setShow1(false)}> 
-                <NavDropdown.Item as={Link} to="/professor">教授</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/members"> 其他成員</NavDropdown.Item>
-              </NavDropdown>
-            <NavDropdown  title="相關資訊" 
+            <NavDropdown  title="系學會介紹" 
                           id="basic-nav-dropdown"
-                          className='nav-dropdown-related'
+                          className="nav-dropdown-intro"
+                          show={show1}
+                          onMouseEnter={() => setShow1(true)}
+                          onMouseLeave={() => setShow1(false)}> 
+              <NavDropdown.Item as={Link} to="/intro/eesa-intro">關於系學會</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/intro/menber"> 成員</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown  title="活動" 
+                          id="basic-nav-dropdown"
+                          className="nav-dropdown-event dropdown-2word"
                           show={show2}
                           onMouseEnter={() => setShow2(true)}
                           onMouseLeave={() => setShow2(false)}> 
-              <NavDropdown.Item as={Link} to="/awards">獲獎資訊</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/news"> 相關新聞</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/lectures">演講與課程</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/event/new-info">最新資訊</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/event/timeline">時間軸</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link className = "nav-team-page" as={Link} to="/team">系隊資訊</Nav.Link>
+            <NavDropdown  title="學習資訊" 
+                          id="basic-nav-dropdown"
+                          className='nav-dropdown-resource'
+                          show={show3}
+                          onMouseEnter={() => setShow3(true)}
+                          onMouseLeave={() => setShow3(false)}> 
+              <NavDropdown.Item as={Link} to="/resource/prevexam">考古網</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/resource/project">專題資訊</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown  title="系上資料" 
+                          id="basic-nav-dropdown"
+                          className='nav-dropdown-file'
+                          show={show4}
+                          onMouseEnter={() => setShow4(true)}
+                          onMouseLeave={() => setShow4(false)}> 
+              <NavDropdown.Item as={Link} to="/file/calendar">行事曆</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/file/course-tool">選課工具</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

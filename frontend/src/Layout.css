@@ -62,11 +62,32 @@
   	display: flex;
   	align-items: center; /* 讓文字、Dropdown 都垂直置中 */
 }
-
+/*導覽列下拉元素大小*/
 .navbar-nav .nav-item.dropdown {
 	padding-left: 0;
 	margin-left: 0; 
 	width:9vw;
+}
+
+/* 兩個字的下拉選單寬度 */
+.navbar-nav .nav-item.dropdown-2word {
+	padding-left: 0;
+	margin-left: 0; 
+	width:6vw;
+}
+
+/* 導覽列樣式 */
+.nav-dropdown-intro{
+	margin-right:2vw;
+}
+.nav-dropdown-event{
+	margin-right:0vw;
+}
+.nav-team-page{
+	margin-left: 0vw;
+}
+.nav-dropdown-related{
+	margin-right:5vw;
 }
 .nav-dropdown-related{
 	margin-right:5vw;
