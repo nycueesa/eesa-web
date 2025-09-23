@@ -14,6 +14,8 @@ import PrevExam from "./page/resource/PrevExam.jsx"
 import Project from "./page/resource/Project.jsx"
 import Calendar from "./page/file/Calendar.jsx"
 import CourseTool from "./page/file/CourseTool.jsx"
+import President from "./page/intro/President";
+
 
 function App(){		
 	return (
@@ -39,6 +41,9 @@ function App(){
 
 			  		<Route path="/activities" element={<Activities />} />
 			  		<Route path="/contact" element={<Contact />} />
+
+					<Route path="/president" element={<President />} />
+
 					
 				</Routes>
 		  	</Layout>

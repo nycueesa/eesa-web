@@ -5,7 +5,7 @@ export default function Main(){
 
     return(
         <div className = {styles.mainPage}>
-            <h1> This is the main page. </h1>
+            <h1> This is the main page.</h1>
         </div>
     )
 }
