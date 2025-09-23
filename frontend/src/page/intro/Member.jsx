@@ -36,6 +36,14 @@ export default function Member(){
             email: "chen@example.com",
             research: "訊號處理、數位電路",
             image: "/images/member4.jpg"
+        },
+        {
+            id: 5,
+            name: "張小明",
+            position: "實驗室主任",
+            email: "zhang@example.com",
+            research: "人工智慧、機器學習",
+            image: "/images/member1.jpg" // placeholder path
         }
     ];
 
