@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Member.module.css"
 
+
 export default function Member(){
     // Sample member data - replace with your actual data
     const members = [
