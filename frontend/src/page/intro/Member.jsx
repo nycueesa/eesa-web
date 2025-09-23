@@ -44,6 +44,7 @@ export default function Member(){
             email: "zhang@example.com",
             research: "人工智慧、機器學習",
             image: "/images/member1.jpg" // placeholder path
+            
         }
     ];
 
