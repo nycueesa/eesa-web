@@ -6,11 +6,11 @@ export default function Member(){
     const members = [
         {
             id: 1,
-            name: "張小明",
-            position: "實驗室主任",
-            email: "zhang@example.com",
-            research: "人工智慧、機器學習",
-            image: "/images/member1.jpg" // placeholder path
+            name: "廖富量",
+            position: "系學會會長",
+            email: "morgan119502@gmail.com",
+            research: "AIC",
+            image: "/members/587EB773-A7B3-45B5-90A9-70F927BC7F6F.jpeg" // placeholder stored in public/
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ export default function Member(){
             position: "博士生",
             email: "li@example.com",
             research: "感測器系統、物聯網",
-            image: "/images/member2.jpg"
+            image: "/members/phd.svg"
         },
         {
             id: 3,
@@ -26,7 +26,7 @@ export default function Member(){
             position: "碩士生",
             email: "wang@example.com",
             research: "嵌入式系統、FPGA",
-            image: "/images/member3.jpg"
+            image: "/members/master-iot.svg"
         },
         {
             id: 4,
@@ -34,7 +34,7 @@ export default function Member(){
             position: "碩士生",
             email: "chen@example.com",
             research: "訊號處理、數位電路",
-            image: "/images/member4.jpg"
+            image: "/members/master-signal.svg"
         }
     ];
 
