@@ -40,6 +40,11 @@ function TopNavbar() {
                           onMouseLeave={() => setShow1(false)}> 
               <NavDropdown.Item as={Link} to="/intro/eesa-intro">關於系學會</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/intro/member"> 成員</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/intro/academic">學術部</NavDropdown.Item>
+              {/* <NavDropdown.Item as={Link} to="/intro/social">活器部</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/intro/human">人力部</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/intro/marketing">行銷部</NavDropdown.Item> */}
+              {/* ...其他部門連結待補`*/}
             </NavDropdown>
             <NavDropdown  title="活動" 
                           id="basic-nav-dropdown"
