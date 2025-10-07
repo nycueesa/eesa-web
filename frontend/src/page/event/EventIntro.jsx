@@ -1,11 +1,6 @@
 import React from "react";
-<<<<<<< HEAD
-import styles from "./EventIntro.module.css"
-import main_pic from "../../media/active-eecamp-1.jpg"
-=======
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import styles from "./EventIntro.module.css";
->>>>>>> main
 
 export default function EventIntro() {
     const events = [
@@ -39,12 +34,6 @@ export default function EventIntro() {
         }
     ];
 
-<<<<<<< HEAD
-    return(
-        <div className = {styles.eventIntroPage}>
-            <img src = {main_pic} className = {styles.main_pic}/>
-            <h1> 活動簡介頁面 </h1>
-=======
     const categories = [
         { name: "Academic", icon: "🎓", description: "學術相關活動" },
         { name: "Social", icon: "🤝", description: "社交聯誼活動" },
@@ -166,7 +155,6 @@ export default function EventIntro() {
                     </Col>
                 </Row>
             </Container>
->>>>>>> main
         </div>
     );
 }
