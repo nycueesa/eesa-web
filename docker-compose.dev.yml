@@ -1,6 +1,6 @@
 services:
   web-frontend-dev:
-    # Vite 7+ 需要 Node.js 20+，因此升級基礎映像檔 
+    # Vite 7+ 需要 Node.js 20+，因此升級基礎映像檔
     image: node:20-alpine
     container_name: web-frontend-dev
     ports:
