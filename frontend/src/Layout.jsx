@@ -87,13 +87,13 @@ function Footer() {
     return(
         <footer className="navbar-footer">
             <div className="contactRow">
-            <span className="contactItem">| TEL | +886-3-xyz-xxxx </span>
-            <span className="contactItem">| Email | nycu.xueshubu@gmail.com </span>
-            <span className="contactItem">| Address | 新竹市東區大學路1001號工程五館219B室</span>
+            <span className="contactItem">| TEL | +886-3-xyz-xxxx</span>
+            <span className="contactItem">| Email | AiSMARTLab@gmail.com</span>
+            <span className="contactItem">| Address | 新竹市東區大學路1001號工程五館222室</span>
             </div>
             <hr className="contactHr" />
             <div className="contactCopyRight">
-            Copyright © National Yang Ming Chiao Tung University Electrical Engineering Student Association
+            Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
             </div>
         </footer>      
     )
