@@ -7,6 +7,8 @@ import Activities from "./page/activities/Activities.jsx"
 import EesaIntro from "./page/intro/EesaIntro.jsx"
 import Member from "./page/intro/Member.jsx"
 import Academic from "./page/intro/Academic.jsx";
+import Technical from "./page/intro/Technical.jsx";
+import TechnicalActivities from "./page/intro/TechnicalActivities.jsx";
 import EventIntro from "./page/event/EventIntro.jsx"
 import NewInfo from "./page/event/NewInfo.jsx"
 import Timeline from "./page/event/Timeline.jsx"
@@ -26,6 +28,8 @@ function App(){
 					<Route path="/intro/eesa-intro" element={<EesaIntro />} />
 					<Route path="/intro/member" element={<Member />} />
 					<Route path="/intro/academic" element={<Academic />} />
+					<Route path="/intro/technical" element={<Technical />} />
+					<Route path="/intro/technical-activities" element={<TechnicalActivities />} />
 
 					<Route path="/event/event-intro" element={<EventIntro />} />
 					<Route path="/event/new-info" element={<NewInfo />} />
