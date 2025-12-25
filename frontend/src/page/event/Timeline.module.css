@@ -1,334 +1,285 @@
-/* Timeline 版面採 clamp/minmax，確保各裝置都有合理間距 */
-.timelinePage {
+.page {
+  --fig-orange: #ff8000; /* r=1 g=0.5 b=0 (Figma) */
+  --fig-date-orange: #f3881f; /* r=0.9529 g=0.5372 b=0.1216 */
+  --fig-blue-900: #0e1e31; /* r=0.0549 g=0.1176 b=0.1921 */
+  --fig-top-grad-1: #212255; /* approx from r=0.130 g=0.134 b=0.335 */
+  --fig-top-grad-2: #363887; /* approx from r=0.213 g=0.219 b=0.531 */
+  --fig-top-grad-3: #091b28; /* approx from r=0.036 g=0.105 b=0.157 */
+
+  color: #f4f6fb;
+  background: linear-gradient(90deg, var(--fig-top-grad-1) 0%, var(--fig-top-grad-2) 35%, var(--fig-top-grad-3) 100%);
   min-height: 100vh;
-  padding: clamp(48px, 8vw, 72px) clamp(16px, 6vw, 32px) clamp(80px, 12vw, 104px);
-  background: #f5f7fb;
-  color: #1e2a3d;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 0 80px 0;
+  font-family: "M PLUS Rounded 1c", "Microsoft JhengHei", Arial, sans-serif;
 }
 
-.header {
-  max-width: min(960px, 92vw);
-  margin: 0 auto clamp(32px, 6vw, 48px);
-  text-align: center;
+/* top bar removed */
+
+/* brand title removed */
+
+/* switch row removed */
+
+/* switch button removed */
+ .figmaImage {
+  width: 100%;
+  height: auto;
+  display: block;
+ }
+
+/* switch button hover removed */
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
+  gap: clamp(18px, 3vw, 28px);
+}
+
+.heroContent {
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffc27a;
+  margin: 0 0 8px 0;
 }
 
 .title {
-  font-size: clamp(2rem, 1.4vw + 1.7rem, 3rem);
-  font-weight: 600;
-  margin-bottom: clamp(12px, 1.3vw, 18px);
-  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 0.8vw + 0.9rem, 1.2rem);
-  color: #5b6c87;
-  line-height: 1.7;
-  margin: 0 auto;
-  max-width: min(640px, 92vw);
+  margin: 0 0 16px 0;
+  color: #cfd8e3;
+  line-height: 1.6;
 }
 
-.timelineWrapper {
-  max-width: min(1180px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(180px, 1.1fr);
-  gap: clamp(24px, 5vw, 56px);
-  align-items: flex-start;
-}
-
-/* 以自訂變數統一調整軸線位置與卡片尺寸，方便後續微調 */
-.timelineContent {
-  position: relative;
-  display: grid;
-  gap: clamp(28px, 4.5vw, 44px);
-  padding-left: calc(var(--timeline-offset) + var(--marker-spacing));
-  --timeline-offset: clamp(22px, 6vw, 44px);
-  --marker-spacing: clamp(40px, 8vw, 72px);
-  --card-padding-y: clamp(20px, 3.5vw, 28px);
-  --card-padding-x: clamp(20px, 3.8vw, 32px);
-}
-
-.timelineContent::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  bottom: 16px;
-  left: var(--timeline-offset);
-  width: clamp(3px, 0.5vw, 4px);
-  border-radius: 2px;
-  background: linear-gradient(180deg, #9cb4d8, #cdd8eb);
-}
-
-.timelineIcon {
-  position: absolute;
-  top: -6px;
-  left: calc(var(--timeline-offset) - clamp(8px, 1.5vw, 14px));
-  width: clamp(28px, 5vw, 44px);
-  height: clamp(28px, 5vw, 44px);
-  border-radius: 50%;
-  background: #132947;
+.heroBadges {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #f5f7fb;
-  font-size: clamp(1.05rem, 0.9vw + 0.8rem, 1.4rem);
-  box-shadow: 0 8px 16px rgba(19, 41, 71, 0.2);
-}
-
-.monthSection {
-  display: grid;
-  grid-template-columns: minmax(120px, clamp(0.8fr, 28vw, 1fr)) minmax(0, 2.2fr);
-  gap: clamp(16px, 3.5vw, 28px);
-}
-
-.monthMarker {
-  position: relative;
-  padding-left: calc(var(--timeline-offset) + clamp(24px, 5vw, 40px));
-}
-
-.monthMarker::before {
-  content: '';
-  position: absolute;
-  top: clamp(2px, 0.6vw, 8px);
-  left: var(--timeline-offset);
-  width: clamp(12px, 2vw, 16px);
-  height: clamp(12px, 2vw, 16px);
-  border-radius: 50%;
-  background: #132947;
-  border: 4px solid #f5f7fb;
-  box-shadow: 0 0 0 clamp(4px, 1vw, 6px) rgba(19, 41, 71, 0.12);
-}
-
-.monthYear {
-  font-size: clamp(0.85rem, 0.3vw + 0.75rem, 0.95rem);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #5b6c87;
-}
-
-.monthLabel {
-  display: block;
-  font-size: clamp(1.4rem, 1vw + 1.2rem, 1.8rem);
-  font-weight: 600;
-  color: #132947;
-  margin-top: clamp(4px, 1vw, 8px);
-}
-
-.eventList {
-  display: grid;
-  gap: clamp(20px, 3.8vw, 28px);
-}
-
-.eventCard {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #d8e1f0;
-  border-radius: clamp(16px, 3vw, 22px);
-  padding: var(--card-padding-y) var(--card-padding-x);
-  box-shadow: 0 8px 20px rgba(13, 33, 68, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  outline: none;
-}
-
-.eventCard:hover,
-.eventCard:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(13, 33, 68, 0.12);
-}
-
-.eventOverview {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(10px, 2.4vw, 16px);
-}
-
-.eventTitle {
-  font-size: clamp(1.2rem, 0.9vw + 1rem, 1.5rem);
-  font-weight: 600;
-  color: #132947;
-  margin: 0;
-}
-
-.eventMeta {
-  display: flex;
+  gap: 10px;
   flex-wrap: wrap;
-  gap: clamp(10px, 2.5vw, 20px);
-  font-size: clamp(0.92rem, 0.6vw + 0.85rem, 1rem);
-  color: #5b6c87;
 }
 
-.metaItem {
+.badgeMain,
+.badgeSub {
   display: inline-flex;
   align-items: center;
-  gap: clamp(4px, 1vw, 8px);
-  background: #eef2f9;
-  padding: clamp(4px, 0.9vw, 6px) clamp(10px, 2vw, 14px);
+  gap: 8px;
+  padding: 8px 14px;
   border-radius: 999px;
+  font-weight: 700;
 }
 
-.eventSummary {
-  margin: 0;
-  color: #3c4e68;
-  line-height: 1.7;
+.badgeMain {
+  background: linear-gradient(135deg, #ff9a3c, #ff7b00);
+  color: #0f1829;
 }
 
-.tagList {
+.badgeSub {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7d9a7;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heroCard {
+  padding: clamp(18px, 3vw, 24px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.heroCardTitle {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffd9a0;
+}
+
+.heroCardText {
+  margin: 0 0 8px 0;
+  color: #dfe6f2;
+  line-height: 1.5;
+}
+
+.timelineSection {
+  margin-top: clamp(36px, 6vw, 54px);
+}
+
+.timelineHeader {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(6px, 1.6vw, 10px);
-  padding: 0;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.sectionTitle {
   margin: 0;
-  list-style: none;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.sectionHint {
+  margin: 0;
+  color: #c1ccdd;
+  font-size: 14px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 120px 26px 1fr;
+  align-items: start;
+  gap: 12px;
+}
+
+.timeBlock {
+  color: #ffb36a;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-top: 4px;
+}
+
+.period {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255, 186, 120, 0.12);
+  border: 1px solid rgba(255, 186, 120, 0.35);
+  color: var(--fig-date-orange);
+}
+
+.dotColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 190, 120, 0.12), 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.dotMajor {
+  background: linear-gradient(135deg, var(--fig-orange), #ff6a00);
+}
+
+.dotMinor {
+  background: linear-gradient(135deg, #ffcf9d, #ffb36a);
+}
+
+.connector {
+  flex: 1;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(255, 186, 120, 0.5), rgba(255, 186, 120, 0));
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.card {
+  background: rgba(17, 31, 52, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.chipMajor {
+  background: rgba(255, 122, 0, 0.15);
+  border-color: rgba(255, 122, 0, 0.55);
+  color: #ffb774;
+}
+
+.chipMinor {
+  background: rgba(255, 207, 157, 0.12);
+  border-color: rgba(255, 207, 157, 0.4);
+  color: #ffd9a0;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.cardDesc {
+  margin: 0 0 10px 0;
+  color: #cfd7e5;
+  line-height: 1.6;
+}
+
+.tagRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .tag {
-  padding: clamp(4px, 0.9vw, 6px) clamp(12px, 2.5vw, 16px);
-  border-radius: 999px;
-  background: #dce5f6;
-  color: #2b3d5a;
-  font-size: clamp(0.82rem, 0.5vw + 0.8rem, 0.95rem);
-  font-weight: 500;
-}
-
-.eventDetail {
-  margin-top: clamp(14px, 3vw, 20px);
-  color: #455b7f;
-  line-height: 1.75;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, opacity 0.3s ease;
-}
-
-.eventCard:hover .eventDetail,
-.eventCard:focus-within .eventDetail {
-  max-height: 340px;
-  opacity: 1;
-}
-
-.timelineNav {
-  position: sticky;
-  top: clamp(72px, 12vh, 140px);
-  background: #ffffff;
-  border: 1px solid #d8e1f0;
-  border-radius: clamp(16px, 3vw, 22px);
-  padding: clamp(22px, 3.5vw, 30px);
-  box-shadow: 0 12px 28px rgba(13, 33, 68, 0.08);
-}
-
-.navTitle {
-  font-size: clamp(1rem, 0.7vw + 0.9rem, 1.2rem);
-  font-weight: 600;
-  color: #132947;
-  margin-bottom: clamp(12px, 2vw, 16px);
-}
-
-.navList {
-  display: grid;
-  gap: clamp(8px, 2vw, 14px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.navItem {
-  margin: 0;
-}
-
-.navLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(8px, 2vw, 16px);
-  padding: clamp(10px, 2vw, 14px) clamp(12px, 2.4vw, 20px);
-  border-radius: clamp(12px, 2.5vw, 16px);
-  background: #eef2f9;
-  color: #2b3d5a;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.navLink:hover,
-.navLink:focus-visible {
-  background: #dce5f6;
-  transform: translateX(4px);
-  outline: none;
-}
-
-.navIcon {
-  font-size: clamp(0.85rem, 0.6vw + 0.7rem, 1rem);
-  color: #7b8fb0;
-}
-
-@media (max-width: 1040px) {
-  .timelineWrapper {
-    grid-template-columns: minmax(0, 1fr) minmax(160px, 0.9fr);
-  }
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e8edf7;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 @media (max-width: 900px) {
-  .timelineWrapper {
+  .timelineRow {
+    grid-template-columns: 90px 22px 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 32px 16px 64px;
+  }
+
+  .timelineRow {
     grid-template-columns: 1fr;
-    gap: clamp(28px, 8vw, 40px);
   }
 
-  .timelineNav {
-    position: relative;
-    top: 0;
-    width: 100%;
-  }
-}
-
-@media (max-width: 720px) {
-  .timelinePage {
-    padding: clamp(40px, 10vw, 56px) clamp(14px, 6vw, 24px) clamp(60px, 12vw, 80px);
+  .dotColumn {
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
   }
 
-  .timelineContent {
-    --marker-spacing: clamp(32px, 10vw, 52px);
-    gap: clamp(24px, 7vw, 36px);
-  }
-
-  .monthSection {
-    grid-template-columns: 1fr;
-    gap: clamp(12px, 5vw, 20px);
-  }
-
-  .monthMarker {
-    padding-left: calc(var(--timeline-offset) + clamp(16px, 6vw, 28px));
-  }
-
-  .timelineNav {
-    margin-top: clamp(24px, 8vw, 32px);
-    padding: clamp(20px, 6vw, 28px);
-  }
-
-  .navList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(8px, 4vw, 16px);
-  }
-
-  .navItem {
-    flex: 1 1 clamp(140px, 45%, 220px);
-  }
-}
-
-@media (max-width: 500px) {
-  .navList {
-    flex-direction: column;
-  }
-
-  .navItem {
-    flex: none;
-  }
-}
-
-@media (hover: none) {
-  .eventDetail {
-    max-height: none;
-    opacity: 1;
+  .connector {
+    display: none;
   }
 }
