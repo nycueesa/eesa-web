@@ -9,6 +9,8 @@ import Member from "./page/intro/Member.jsx"
 import Academic from "./page/intro/Academic.jsx";
 import Technical from "./page/intro/Technical.jsx";
 import TechnicalActivities from "./page/intro/TechnicalActivities.jsx";
+import Publicity from "./page/intro/Publicity.jsx";
+import Operations from "./page/intro/Operations.jsx";
 import EESAWeb from "./page/intro/TechActivities/EESAWeb.jsx";
 import HighSchoolVisit from "./page/intro/TechActivities/HighSchoolVisit.jsx";
 import HardwareCourse from "./page/intro/TechActivities/HardwareCourse.jsx";
@@ -36,6 +38,8 @@ function App(){
 					<Route path="/intro/academic" element={<Academic />} />
 					<Route path="/intro/technical" element={<Technical />} />
 					<Route path="/intro/technical-activities" element={<TechnicalActivities />} />
+					<Route path="/intro/publicity" element={<Publicity />} />
+					<Route path="/intro/operation" element={<Operations />} />
 					<Route path="/intro/technical-activities/eesa-web" element={<EESAWeb />} />
 					<Route path="/intro/technical-activities/high-school-visit" element={<HighSchoolVisit />} />
 					<Route path="/intro/technical-activities/hardware-course" element={<HardwareCourse />} />
