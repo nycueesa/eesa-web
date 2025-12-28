@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -93,14 +93,7 @@ export default function Layout({ children }) {
         console.log("Current path:", currentPath);
         dispatch(setPositionPage(currentPath));
         localStorage.setItem('lastPath', currentPath);
-    }, []);
-
-    useEffect(() => {
-        console.log(positions);
-        if (positions !== window.location.pathname) {
-            navigate(positions, { replace: true });
-        }
-    }, [navigate]);
+    }, [location.pathname, dispatch]);
 
     return (
         <div>
