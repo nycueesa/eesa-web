@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import "./Layout.css";
@@ -101,25 +101,17 @@ function Footer() {
 
 export default function Layout({ children }) {
     const navigate = useNavigate();
+    const location = useLocation();
     const dispatch = useDispatch();
-    const positions = useSelector((state) => state.positionPage);
+    // 取出儲存在 redux-persist 的路徑，state 結構為 { common: { positionPage } }
+    const positions = useSelector((state) => state.common?.positionPage);
 
-    // 頁面一載入就紀錄位置
+    // 監聽路由變化，隨時同步到 redux 與 localStorage
     useEffect(() => {
-      const currentPath = window.location.pathname;
-      console.log("Current path:", currentPath);
+      const currentPath = location.pathname;
       dispatch(setPositionPage(currentPath));
-      // 存 localStorage
       localStorage.setItem('lastPath', currentPath);
-    }, []);
-
-    // 刷新自動 navigate
-    useEffect(() => {
-      console.log(positions);
-    if (positions !== window.location.pathname) {
-      navigate(positions, { replace: true });
-    }
-    }, [navigate]);  
+    }, [location.pathname, dispatch]);
 
   return (
     <div>
