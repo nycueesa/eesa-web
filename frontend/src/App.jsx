@@ -49,6 +49,8 @@ function App(){
 
 					<Route path="/team" element={<Team />} />
 
+
+
 					<Route path="/resource/prevexam" element={<PrevExam />} />
 					<Route path="/resource/project" element={<Project />} />
 
