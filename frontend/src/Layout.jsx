@@ -1,5 +1,13 @@
-﻿import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from "react-router-dom";
+﻿import React from 'react';
+import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
+
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -98,7 +106,6 @@ export default function Layout({ children }) {
         // 存 localStorage
         localStorage.setItem('lastPath', currentPath);
     }, [location.pathname, dispatch]);
-
 
     return (
         <div>
