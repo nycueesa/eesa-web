@@ -83,8 +83,10 @@ function Footer() {
 
 export default function Layout({ children }) {
     const navigate = useNavigate();
+    const location = useLocation();
     const dispatch = useDispatch();
-    const positions = useSelector((state) => state.positionPage);
+    // 取出儲存在 redux-persist 的路徑，state 結構為 { common: { positionPage } }
+    const positions = useSelector((state) => state.common?.positionPage);
 
     useEffect(() => {
         const currentPath = window.location.pathname;
