@@ -1,18 +1,18 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import styles from "./Technical.module.css";
+import styles from "./Operations.module.css";
 
-export default function Technical() {
+export default function Operations() {
     const navigate = useNavigate();
 
     return (
-        <div className={styles.technicalPage}>
+        <div className={styles.operationsPage}>
             {/* Banner */}
             <div className={styles.banner}>
                 <img
-                    src="/intro/technical-banner.jpg"
-                    alt="Technical Banner"
+                    src="/intro/operations-banner.jpg"
+                    alt="Operations Banner"
                     className={styles.bannerImage}
                 />
             </div>
@@ -37,38 +37,44 @@ export default function Technical() {
                             </div>
                             <div
                                 className={styles.sidebarLabel}
-                                onClick={() => navigate("/intro/technical-activities")}
+                                onClick={() => navigate("/intro/operations-activities")}
                                 style={{ cursor: "pointer" }}
                             >
                                 部門活動
+                            </div>
+                            <div className={styles.sidebarLabel}>
+                                學習能力
+                            </div>
+                            <div className={styles.sidebarLabel}>
+                                體驗談
                             </div>
                         </div>
                     </Col>
 
                     {/* Main Content */}
                     <Col md={10} className={styles.mainCol}>
-                        {/* 學術部簡介 */}
+                        {/* 人力部簡介 */}
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>學術部簡介</h2>
+                            <h2 className={styles.sectionTitle}>人力部簡介</h2>
                             <div className={styles.sectionContent}>
                                 <p className={styles.contentText}>
-                                    大家好，我們是系學會的學術部，主要由大三以及大二的同學組成，平常主要會協助系學會偏學術性質的活動。
+                                    歡迎來到人力部，人力部是個快樂吃飯開心聊八卦的地方！除了幾乎每周固定的部聚讓大家可以吃好喝好以外，我們還有一個環境很舒服，設備很齊全的部窩可以讓你休息！
                                 </p>
                                 <p className={styles.contentText}>
-                                    我們很希望可以透過自己幫助到系上的同學們，如果有你認為我們可以協助的內容，歡迎到下方的email與我們聯繫，最後祝大家考試順利杜絕爆卷從你我做起
+                                    歡迎大家進入人力部裡學習如何當個優秀的領導人，或是增進自己不論是簡報或是發表的能力！
                                 </p>
                             </div>
                         </section>
 
-                        {/* 學術部 合照 */}
+                        {/* 人力部 合照 */}
                         <div className={styles.divider}></div>
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>學術部 合照</h2>
+                            <h2 className={styles.sectionTitle}>人力部 合照</h2>
                             <div className={styles.photoSection}>
                                 <div className={styles.photoPlaceholder}>
                                     <img
-                                        src="/intro/technical-group-photo.jpg"
-                                        alt="學術部合照"
+                                        src="/intro/operations-group-photo.jpg"
+                                        alt="人力部合照"
                                         className={styles.groupPhoto}
                                     />
                                 </div>

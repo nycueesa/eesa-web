@@ -10,32 +10,32 @@ export default function TechnicalActivities() {
         {
             name: "系學會網頁",
             image: "/intro/activities/department-website.jpg",
-            link: null
+            link: "/intro/technical-activities/eesa-web"
         },
         {
             name: "高中生參訪",
             image: "/intro/activities/high-school-visit.jpg",
-            link: null
+            link: "/intro/technical-activities/high-school-visit"
         },
         {
             name: "一日營硬體課程",
             image: "/intro/activities/hardware-course.jpg",
-            link: null
+            link: "/intro/technical-activities/hardware-course"
         },
         {
             name: "一日營軟體課程",
             image: "/intro/activities/software-course.jpg",
-            link: null
+            link: "/intro/technical-activities/software-course"
         },
         {
             name: "光棍",
             image: "/intro/activities/singles-day.jpg",
-            link: null
+            link: "/intro/technical-activities/singles-day"
         },
         {
             name: "選課大會",
             image: "/intro/activities/course-selection.jpg",
-            link: null
+            link: "/intro/technical-activities/course-selection"
         }
     ];
 
@@ -56,9 +56,7 @@ export default function TechnicalActivities() {
                     <Col md={2} className={styles.sidebarCol}>
                         <div className={styles.sidebar}>
                             <div className={styles.sidebarIcon}>
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                                </svg>
+                                <img src="/intro/all_inbox.svg" alt="inbox icon" />
                             </div>
                             <div
                                 className={styles.sidebarLabel}
