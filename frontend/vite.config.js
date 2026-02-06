@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 5173,
     watch: {
       // 啟用 polling 模式來解決 WSL/Docker 檔案監控問題
