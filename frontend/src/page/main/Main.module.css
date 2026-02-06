@@ -1,4 +1,153 @@
-.mainPage{
-    width:100vw;
-    background-color: bisque;
+/* Main Page Styles */
+.mainPage {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorations */
+.decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decorMoon {
+    top: 15%;
+    right: 28%;
+    width: 112px;
+    height: 119px;
+}
+
+.decorLightning {
+    bottom: 15%;
+    right: 28%;
+    width: 180px;
+    height: auto;
+}
+
+.decorBubbles {
+    bottom: 15%;
+    left: 28%;
+    width: 240px;
+    height: auto;
+    opacity: 0.8;
+}
+
+/* Hero Container */
+.heroContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Illustration */
+.heroIllustration {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.heroImage {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Clickable Hero Links */
+.heroLinks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.heroLink {
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.2s ease;
+}
+
+.heroLink:hover {
+    transform: scale(1.05);
+}
+
+/* Position clickable areas over each character */
+.linkEesa {
+    /* Green bird - 系學會 - bottom left */
+    left: 15%;
+    bottom: 5%;
+    width: 20%;
+    height: 25%;
+}
+
+.linkActivities {
+    /* Red bird - 系上活動 - top center */
+    left: 35%;
+    top: 30%;
+    width: 25%;
+    height: 20%;
+}
+
+.linkResources {
+    /* Blue bird - 學習資料 - left side */
+    left: 10%;
+    top: 40%;
+    width: 20%;
+    height: 20%;
+}
+
+.linkTeam {
+    /* Yellow bird - 系隊 - right side */
+    right: 15%;
+    top: 35%;
+    width: 20%;
+    height: 20%;
+}
+
+.linkContact {
+    /* Purple bird - 聯絡我們 - bottom right */
+    right: 15%;
+    bottom: 5%;
+    width: 20%;
+    height: 25%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .linkEesa,
+    .linkActivities,
+    .linkResources,
+    .linkTeam,
+    .linkContact {
+        width: 18%;
+        height: 18%;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .decor {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContainer {
+        padding: 10px;
+    }
 }

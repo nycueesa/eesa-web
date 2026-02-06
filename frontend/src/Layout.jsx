@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -82,31 +82,23 @@ function Footer() {
 }
 
 export default function Layout({ children }) {
-    const navigate = useNavigate();
     const location = useLocation();
     const dispatch = useDispatch();
-    // 取出儲存在 redux-persist 的路徑，state 結構為 { common: { positionPage } }
-    const positions = useSelector((state) => state.common?.positionPage);
 
+    // Save current path to redux whenever location changes
     useEffect(() => {
-        const currentPath = window.location.pathname;
-        console.log("Current path:", currentPath);
+        const currentPath = location.pathname;
         dispatch(setPositionPage(currentPath));
         localStorage.setItem('lastPath', currentPath);
-    }, []);
+    }, [location.pathname, dispatch]);
 
-    useEffect(() => {
-        console.log(positions);
-        if (positions !== window.location.pathname) {
-            navigate(positions, { replace: true });
-        }
-    }, [navigate]);
+    const isMainPage = location.pathname === '/';
 
     return (
         <div>
             <Header />
             <main className={styles.mainContent}>{children}</main>
-            <Footer />
+            {!isMainPage && <Footer />}
         </div>
     );
 }
