@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -167,24 +168,30 @@ export default function Layout({ children }) {
     const dispatch = useDispatch();
     const positions = useSelector((state) => state.positionPage);
   const hideNavbar = location.pathname.startsWith('/activities');
+  const hideNavbar = location.pathname.startsWith('/activities');
 
     useEffect(() => {
+      const currentPath = location.pathname;
       const currentPath = location.pathname;
       console.log("Current path:", currentPath);
       dispatch(setPositionPage(currentPath));
       // 存 localStorage
       localStorage.setItem('lastPath', currentPath);
     }, [location.pathname, dispatch]);
+    }, [location.pathname, dispatch]);
 
     useEffect(() => {
       console.log(positions);
     if (positions !== location.pathname) {
+    if (positions !== location.pathname) {
       navigate(positions, { replace: true });
     }
+    }, [navigate, positions, location.pathname]);  
     }, [navigate, positions, location.pathname]);  
 
   return (
     <div>
+      {!hideNavbar && <Header />}
       {!hideNavbar && <Header />}
       <main>{children}</main>
       <Footer />
