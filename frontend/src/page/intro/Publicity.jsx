@@ -1,18 +1,18 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import styles from "./Technical.module.css";
+import styles from "./Publicity.module.css";
 
-export default function Technical() {
+export default function Publicity() {
     const navigate = useNavigate();
 
     return (
-        <div className={styles.technicalPage}>
+        <div className={styles.publicityPage}>
             {/* Banner */}
             <div className={styles.banner}>
                 <img
-                    src="/intro/technical-banner.jpg"
-                    alt="Technical Banner"
+                    src="/intro/publicity-banner.jpg"
+                    alt="Publicity Banner"
                     className={styles.bannerImage}
                 />
             </div>
@@ -37,38 +37,41 @@ export default function Technical() {
                             </div>
                             <div
                                 className={styles.sidebarLabel}
-                                onClick={() => navigate("/intro/technical-activities")}
+                                onClick={() => navigate("/intro/publicity-activities")}
                                 style={{ cursor: "pointer" }}
                             >
                                 部門活動
+                            </div>
+                            <div className={styles.sidebarLabel}>
+                                學習能力
                             </div>
                         </div>
                     </Col>
 
                     {/* Main Content */}
                     <Col md={10} className={styles.mainCol}>
-                        {/* 學術部簡介 */}
+                        {/* 行銷部簡介 */}
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>學術部簡介</h2>
+                            <h2 className={styles.sectionTitle}>行銷部簡介</h2>
                             <div className={styles.sectionContent}>
                                 <p className={styles.contentText}>
-                                    大家好，我們是系學會的學術部，主要由大三以及大二的同學組成，平常主要會協助系學會偏學術性質的活動。
+                                    行銷部如同系學會的創意部門，主要負責社群帳號的經營管理、貼文製作、攝影紀錄，系服與尊榮小物也是出自行銷部。
                                 </p>
                                 <p className={styles.contentText}>
-                                    我們很希望可以透過自己幫助到系上的同學們，如果有你認為我們可以協助的內容，歡迎到下方的email與我們聯繫，最後祝大家考試順利杜絕爆卷從你我做起
+                                    我們透過不同宣傳方式，讓電機系的特色及活動被更多系上同學看見。
                                 </p>
                             </div>
                         </section>
 
-                        {/* 學術部 合照 */}
+                        {/* 行銷部 合照 */}
                         <div className={styles.divider}></div>
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>學術部 合照</h2>
+                            <h2 className={styles.sectionTitle}>行銷部 合照</h2>
                             <div className={styles.photoSection}>
                                 <div className={styles.photoPlaceholder}>
                                     <img
-                                        src="/intro/technical-group-photo.jpg"
-                                        alt="學術部合照"
+                                        src="/intro/publicity-group-photo.jpg"
+                                        alt="行銷部合照"
                                         className={styles.groupPhoto}
                                     />
                                 </div>

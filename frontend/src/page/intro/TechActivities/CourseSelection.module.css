@@ -1,4 +1,4 @@
-.technicalPage {
+.page {
     background-color: #ffffff;
     min-height: 100vh;
     position: relative;
@@ -76,13 +76,6 @@
     background-color: #f0f0f0;
 }
 
-.sidebarLabel.active {
-    background-color: white;
-    border: 4px solid #2b3070;
-    border-radius: 4px;
-    color: #000000;
-}
-
 /* Main Content */
 .mainCol {
     padding-left: 3%;
@@ -90,71 +83,116 @@
     padding-top: 40px;
 }
 
-.section {
+/* Activity Detail Section */
+.activityDetail {
     margin-bottom: 40px;
 }
 
-.sectionTitle {
+.activityTitle {
     font-family: 'Rounded Mplus 1c', sans-serif;
     font-size: 32px;
     font-weight: 500;
     color: #293768;
     letter-spacing: 1.6px;
-    line-height: 50px;
+    line-height: 75px;
     margin-bottom: 20px;
 }
 
-.sectionContent {
-    margin-top: 30px;
+.contentRow {
+    display: flex;
+    gap: 65px;
+    align-items: flex-start;
 }
 
-.contentText {
+.imageContainer {
+    flex-shrink: 0;
+    width: 489px;
+    height: 317px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.activityImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.descriptionContainer {
+    flex: 1;
+}
+
+.description {
     font-family: 'Rounded Mplus 1c', 'Noto Sans JP', sans-serif;
     font-size: 24px;
     font-weight: 400;
     color: #000000;
     line-height: 50px;
     letter-spacing: 1.2px;
-    text-indent: 2em;
-    margin-bottom: 0;
+    text-indent: 3em;
 }
 
-.divider {
+.bottomDivider {
     width: 100%;
     height: 1px;
     background-color: #000000;
-    margin: 40px 0;
+    margin: 60px 0 40px 0;
 }
 
-/* Photo Section */
-.photoSection {
-    margin-top: 30px;
+/* Navigation Buttons */
+.navButtons {
     display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+    justify-content: flex-end;
+    gap: 0;
 }
 
-.photoPlaceholder {
-    width: 659px;
-    height: 350px;
-    background-color: #d9d9d9;
+.navButton {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 1.2px;
+    line-height: 75px;
+    width: 133px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    transition: background-color 0.3s;
 }
 
-.groupPhoto {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.navButton:hover {
+    background-color: #f0f0f0;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .photoPlaceholder {
+    .contentRow {
+        gap: 40px;
+    }
+
+    .imageContainer {
+        width: 400px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contentRow {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .imageContainer {
         width: 100%;
-        max-width: 659px;
+        max-width: 489px;
+        height: auto;
+        aspect-ratio: 489 / 317;
+    }
+
+    .descriptionContainer {
+        width: 100%;
     }
 }
 
@@ -167,17 +205,26 @@
         padding: 20px 15px;
     }
 
-    .sectionTitle {
+    .activityTitle {
         font-size: 24px;
         line-height: 1.4;
     }
 
-    .contentText {
+    .description {
         font-size: 18px;
         line-height: 1.8;
     }
 
-    .photoPlaceholder {
-        height: 250px;
+    .imageContainer {
+        max-width: 100%;
+    }
+
+    .navButtons {
+        justify-content: center;
+    }
+
+    .navButton {
+        font-size: 18px;
+        width: 100px;
     }
 }
