@@ -1,7 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
+import styles from "./Layout.module.css";
+
+function Header() {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const menuItems = [
+        { label: "系學會", icon: "/icons/user.svg", link: "/intro/eesa-intro" },
+        { label: "系上活動", icon: "/icons/calendar.svg", link: "/event/event-intro" },
+        { label: "學習資料", icon: "/icons/book-open.svg", link: "/resource/prevexam" },
+        { label: "系隊", icon: "/icons/globe.svg", link: "/team" },
+        { label: "其他資料", icon: "/icons/link.svg", link: "/file/calendar" },
+    ];
+
+    const handleMenuItemClick = (link) => {
+        navigate(link);
+        setMenuOpen(false);
+    };
+
+    // Close menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (menuOpen && !e.target.closest(`.${styles.menuButton}`) && !e.target.closest(`.${styles.menuDropdown}`)) {
+                setMenuOpen(false);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [menuOpen]);
 import styles from "./Layout.module.css";
 
 function Header() {
@@ -64,8 +101,46 @@ function Header() {
         </header>
     );
 }
+    return (
+        <header className={styles.header}>
+            <div className={styles.logoSection} onClick={() => navigate("/")}>
+                <img src="/icon.svg" alt="EESA Logo" className={styles.logo} />
+                <span className={styles.logoText}>交大電機</span>
+            </div>
+
+            <button
+                className={`${styles.menuButton} ${menuOpen ? styles.active : ''}`}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle menu"
+            >
+                <span className={styles.menuLine}></span>
+                <span className={styles.menuLine}></span>
+                <span className={styles.menuLine}></span>
+            </button>
+
+            <div className={`${styles.menuDropdown} ${menuOpen ? styles.open : ''}`}>
+                {menuItems.map((item, index) => (
+                    <div
+                        key={index}
+                        className={styles.menuItem}
+                        onClick={() => handleMenuItemClick(item.link)}
+                    >
+                        <img src={item.icon} alt="" className={styles.menuItemIcon} />
+                        {item.label}
+                    </div>
+                ))}
+            </div>
+        </header>
+    );
+}
 
 function Footer() {
+    return (
+        <footer className={styles.footer}>
+            <div className={styles.contactRow}>
+                <span className={styles.contactItem}>| TEL | +886-3-xyz-xxxx</span>
+                <span className={styles.contactItem}>| Email | AiSMARTLab@gmail.com</span>
+                <span className={styles.contactItem}>| Address | 新竹市東區大學路1001號工程五館222室</span>
     return (
         <footer className={styles.footer}>
             <div className={styles.contactRow}>
@@ -76,7 +151,12 @@ function Footer() {
             <hr className={styles.contactHr} />
             <div className={styles.contactCopyRight}>
                 Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
+            <hr className={styles.contactHr} />
+            <div className={styles.contactCopyRight}>
+                Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
             </div>
+        </footer>
+    );
         </footer>
     );
 }
@@ -84,29 +164,38 @@ function Footer() {
 export default function Layout({ children }) {
     const navigate = useNavigate();
     const location = useLocation();
+    const location = useLocation();
     const dispatch = useDispatch();
-    // 取出儲存在 redux-persist 的路徑，state 結構為 { common: { positionPage } }
-    const positions = useSelector((state) => state.common?.positionPage);
+    const positions = useSelector((state) => state.positionPage);
+  const hideNavbar = location.pathname.startsWith('/activities');
+  const hideNavbar = location.pathname.startsWith('/activities');
 
     useEffect(() => {
-        const currentPath = window.location.pathname;
-        console.log("Current path:", currentPath);
-        dispatch(setPositionPage(currentPath));
-        localStorage.setItem('lastPath', currentPath);
-    }, []);
+      const currentPath = location.pathname;
+      const currentPath = location.pathname;
+      console.log("Current path:", currentPath);
+      dispatch(setPositionPage(currentPath));
+      // 存 localStorage
+      localStorage.setItem('lastPath', currentPath);
+    }, [location.pathname, dispatch]);
+    }, [location.pathname, dispatch]);
 
     useEffect(() => {
-        console.log(positions);
-        if (positions !== window.location.pathname) {
-            navigate(positions, { replace: true });
-        }
-    }, [navigate]);
+      console.log(positions);
+    if (positions !== location.pathname) {
+    if (positions !== location.pathname) {
+      navigate(positions, { replace: true });
+    }
+    }, [navigate, positions, location.pathname]);  
+    }, [navigate, positions, location.pathname]);  
 
-    return (
-        <div>
-            <Header />
-            <main className={styles.mainContent}>{children}</main>
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      {!hideNavbar && <Header />}
+      {!hideNavbar && <Header />}
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
 }
+
