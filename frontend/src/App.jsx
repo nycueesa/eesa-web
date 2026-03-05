@@ -4,6 +4,9 @@ import Layout from "./Layout.jsx"
 import Main from "./page/main/Main.jsx"
 import Contact from "./page/contact/Contact.jsx"
 import Activities from "./page/activities/Activities.jsx"
+
+import EEcamp from "./page/activities/EEcampNew.jsx"
+
 import EesaIntro from "./page/intro/EesaIntro.jsx"
 import Member from "./page/intro/Member.jsx"
 import Academic from "./page/intro/Academic.jsx";
@@ -25,6 +28,13 @@ import PrevExam from "./page/resource/PrevExam.jsx"
 import Project from "./page/resource/Project.jsx"
 import Calendar from "./page/file/Calendar.jsx"
 import CourseTool from "./page/file/CourseTool.jsx"
+import SooCamp from './page/activities/SooCamp.jsx';
+import SiloCamp from './page/activities/SiloCamp.jsx';
+import LightDance from './page/activities/LightDance.jsx';
+import EEweek from './page/activities/EEweek.jsx';
+import Drama from './page/activities/Drama.jsx';
+import EEweek_1 from './page/activities/EEweek_1.jsx';
+import EEweek_2 from './page/activities/EEweek_2.jsx';
 
 function App(){		
 	return (
@@ -61,7 +71,15 @@ function App(){
 
 			  		<Route path="/activities" element={<Activities />} />
 			  		<Route path="/contact" element={<Contact />} />
+					<Route path="/activities/eecamp" element={<EEcamp />} />
 					
+					<Route path="/activities/soocamp" element={<SooCamp />} />
+					<Route path="/activities/silocamp" element={<SiloCamp />} />
+					<Route path="/activities/lightdance" element={<LightDance />} />
+					<Route path="/activities/eeweek" element={<EEweek />} />
+					<Route path="/activities/drama" element={<Drama />} />
+					<Route path="/activities/eeweek-1" element={<EEweek_1 />} />
+					<Route path="/activities/eeweek-2" element={<EEweek_2 />} />
 				</Routes>
 		  	</Layout>
 		</BrowserRouter>
