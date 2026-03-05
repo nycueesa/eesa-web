@@ -114,7 +114,7 @@ export default function Layout({ children }) {
     return (
         <div>
             {!hideNavbar && <Header />}
-            <main>{children}</main>
+            <main className={styles.mainContent}>{children}</main>
             <Footer />
         </div>
     );
