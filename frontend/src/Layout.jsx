@@ -7,7 +7,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -141,53 +140,38 @@ function Footer() {
                 <span className={styles.contactItem}>| TEL | +886-3-xyz-xxxx</span>
                 <span className={styles.contactItem}>| Email | AiSMARTLab@gmail.com</span>
                 <span className={styles.contactItem}>| Address | 新竹市東區大學路1001號工程五館222室</span>
-    return (
-        <footer className={styles.footer}>
-            <div className={styles.contactRow}>
-                <span className={styles.contactItem}>| TEL | +886-3-xyz-xxxx</span>
-                <span className={styles.contactItem}>| Email | AiSMARTLab@gmail.com</span>
-                <span className={styles.contactItem}>| Address | 新竹市東區大學路1001號工程五館222室</span>
             </div>
             <hr className={styles.contactHr} />
             <div className={styles.contactCopyRight}>
                 Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
-            <hr className={styles.contactHr} />
-            <div className={styles.contactCopyRight}>
-                Copyright © Autonomous intelligent Sensory Microsystems with Analog Reconfigurable Technologies Laboratory
             </div>
-        </footer>
-    );
         </footer>
     );
 }
 
 export default function Layout({ children }) {
     const location = useLocation();
-    const location = useLocation();
     const dispatch = useDispatch();
     const positions = useSelector((state) => state.positionPage);
-  const hideNavbar = location.pathname.startsWith('/activities');
-  const hideNavbar = location.pathname.startsWith('/activities');
+    const hideNavbar = location.pathname.startsWith('/activities');
+
 
     // Save current path to redux whenever location changes
     useEffect(() => {
-      const currentPath = location.pathname;
       const currentPath = location.pathname;
       console.log("Current path:", currentPath);
       dispatch(setPositionPage(currentPath));
       // 存 localStorage
       localStorage.setItem('lastPath', currentPath);
     }, [location.pathname, dispatch]);
-    }, [location.pathname, dispatch]);
+
 
     useEffect(() => {
       console.log(positions);
     if (positions !== location.pathname) {
-    if (positions !== location.pathname) {
       navigate(positions, { replace: true });
     }
-    }, [navigate, positions, location.pathname]);  
-    }, [navigate, positions, location.pathname]);  
+    }, [navigate, positions, location.pathname]);   
 
   return (
     <div>
