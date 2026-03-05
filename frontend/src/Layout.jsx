@@ -162,7 +162,6 @@ function Footer() {
 }
 
 export default function Layout({ children }) {
-    const navigate = useNavigate();
     const location = useLocation();
     const location = useLocation();
     const dispatch = useDispatch();
@@ -170,6 +169,7 @@ export default function Layout({ children }) {
   const hideNavbar = location.pathname.startsWith('/activities');
   const hideNavbar = location.pathname.startsWith('/activities');
 
+    // Save current path to redux whenever location changes
     useEffect(() => {
       const currentPath = location.pathname;
       const currentPath = location.pathname;
