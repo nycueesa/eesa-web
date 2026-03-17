@@ -1,0 +1,210 @@
+/* Header */
+.header {
+    background: linear-gradient(to right, #212256 0%, #363887 35%, #091b28 100%);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logoText {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Hamburger Menu Button */
+.menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1002;
+}
+
+.menuLine {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menuButton.active .menuLine:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menuButton.active .menuLine:nth-child(2) {
+    opacity: 0;
+}
+
+.menuButton.active .menuLine:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Dropdown Menu */
+.menuDropdown {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.menuDropdown.open {
+    max-height: 600px;
+    opacity: 1;
+    padding: 10px 0;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    background: white;
+    border: 4px solid #2b3070;
+    border-radius: 4px;
+    width: 180px;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.menuItem:hover {
+    background-color: #f0f0f0;
+}
+
+.menuItemIcon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Submenu */
+.submenu {
+    background-color: #f8f8f8;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+    max-height: 300px;
+}
+
+.submenuItem {
+    display: block;
+    padding: 12px 20px 12px 54px;
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.submenuItem:hover {
+    background-color: #e8e8e8;
+    color: #2b3070;
+}
+
+/* Main Content */
+.mainContent {
+    margin-top: 100px;
+    min-height: calc(100vh - 100px - 180px);
+}
+
+/* Footer */
+.footer {
+    background-color: #132947;
+    color: white;
+    padding: 40px 10vw 20px;
+}
+
+.contactRow {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contactItem {
+    font-size: 14px;
+}
+
+.contactHr {
+    border: 0;
+    border-top: 1px solid white;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.contactCopyRight {
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        height: 80px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logoText {
+        font-size: 24px;
+    }
+
+    .mainContent {
+        margin-top: 80px;
+    }
+
+    .menuDropdown {
+        top: 80px;
+        right: 20px;
+    }
+
+    .menuItem {
+        font-size: 18px;
+        padding: 10px 14px;
+        width: 140px;
+    }
+}

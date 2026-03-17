@@ -14,10 +14,6 @@ export default defineConfig({
       // 忽略 node_modules 來提升效能
       ignored: ['**/node_modules/**']
     },
-    // 確保 HMR 正常運作
-    hmr: {
-      port: 5173,
-      host: '0.0.0.0'
-    }
+    // 使用預設 HMR 設定以避免 ws 指向 0.0.0.0
   }
 })
