@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -89,15 +90,19 @@ function Footer() {
 }
 
 export default function Layout({ children }) {
+    const navigate = useNavigate();
     const location = useLocation();
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const positions = useSelector((state) => state.positionPage);
+    const hideNavbar = location.pathname.startsWith('/activities');
     const hideNavbar = location.pathname.startsWith('/activities');
 
     // Save current path to redux whenever location changes
     useEffect(() => {
         const currentPath = location.pathname;
+
         console.log("Current path:", currentPath);
         dispatch(setPositionPage(currentPath));
         // 存 localStorage
@@ -110,11 +115,16 @@ export default function Layout({ children }) {
             navigate(positions, { replace: true });
         }
     }, [navigate, positions, location.pathname]);
+        console.log(positions);
+        if (positions !== location.pathname) {
+            navigate(positions, { replace: true });
+        }
+    }, [navigate, positions, location.pathname]);
 
     return (
         <div>
             {!hideNavbar && <Header />}
-            <main className={styles.mainContent}>{children}</main>
+            <main>{children}</main>
             <Footer />
         </div>
     );

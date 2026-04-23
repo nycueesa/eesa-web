@@ -227,7 +227,7 @@
   padding: 30px 40px;
   margin-bottom: 30px;
   box-shadow: 0 0 15.9px rgba(255, 255, 255, 0.5);
-  max-width: 663px;
+  max-width: 500px;
 }
 
 .text {
@@ -391,7 +391,7 @@
 /* Photo Frames */
 .photoFrame {
   position: relative;
-  border: 10px solid white;
+  border: none;
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -408,6 +408,7 @@
   height: 294px;
   transform: rotate(-5.127deg);
   z-index: 1;
+  background-image: url('./imgae/eeCampPic/活動介紹照片_1.png');
 }
 
 .photo2 {
@@ -418,6 +419,7 @@
   height: 188px;
   transform: rotate(3.31deg);
   z-index: 2;
+  background-image: url('./imgae/eeCampPic/活動介紹照片_2.png');
 }
 
 /* Fire Ball Photos */
@@ -427,9 +429,10 @@
   right: 80px;
   width: 425px;
   height: 283px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(3deg);
   z-index: 1;
+  background-image: url('./imgae/eeCampPic/火球照片_1.png');
 }
 
 .photo4 {
@@ -438,9 +441,9 @@
   left: 20px;
   width: 255px;
   height: 170px;
-  border-width: 10px;
   transform: rotate(-8deg);
   z-index: 2;
+  background-image: url('./imgae/eeCampPic/火球照片_2-1.png');
 }
 
 .photo5 {
@@ -449,9 +452,9 @@
   left: 100px;
   width: 253px;
   height: 169px;
-  border-width: 10px;
   transform: rotate(5deg);
   z-index: 3;
+  background-image: url('./imgae/eeCampPic/火球照片_2.png');
 }
 
 .photo6 {
@@ -460,9 +463,9 @@
   right: 0px;
   width: 216px;
   height: 198px;
-  border-width: 10px;
   transform: rotate(-3deg);
   z-index: 4;
+  background-image: url('./imgae/eeCampPic/火球照片_3.png');
 }
 
 /* Fire Stick Photos */
@@ -472,9 +475,10 @@
   left: 100px;
   width: 382px;
   height: 255px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(3.312deg);
   z-index: 2;
+  background-image: url('./imgae/eeCampPic/火棍照片_1.png');
 }
 
 .photo8 {
@@ -485,6 +489,7 @@
   height: 193px;
   transform: rotate(-3.123deg);
   z-index: 1;
+  background-image: url('./imgae/eeCampPic/火棍照片_2.png');
 }
 
 /* Incense Fan Photos */
@@ -495,6 +500,7 @@
   height: 264px;
   border: none;
   transform: rotate(1.921deg);
+  background-image: url('./imgae/eeCampPic/香扇照片.png');
 }
 
 .photo9::after {
@@ -516,6 +522,7 @@
   width: 261px;
   height: 190px;
   transform: rotate(7.528deg);
+  background-image: url('./imgae/eeCampPic/香扇照片_2.png');
 }
 
 .photo11 {
@@ -525,6 +532,7 @@
   width: 275px;
   height: 174px;
   transform: rotate(-6.713deg);
+  background-image: url('./imgae/eeCampPic/香扇照片_3.png');
 }
 
 /* Flag Photos */
@@ -536,6 +544,7 @@
   height: 209px;
   transform: rotate(3.36deg);
   z-index: 1;
+  background-image: url('./imgae/eeCampPic/小旗照片_1.png');
 }
 
 .photo13 {
@@ -546,6 +555,7 @@
   height: 218px;
   transform: rotate(-2.31deg);
   z-index: 2;
+  background-image: url('./imgae/eeCampPic/小旗照片_2.png');
 }
 
 .photo14 {
@@ -556,6 +566,7 @@
   height: 218px;
   transform: rotate(2.5deg);
   z-index: 1;
+  background-image: url('./imgae/eeCampPic/小旗照片_3.png');
 }
 
 /* Snake Dance Photos */
@@ -564,8 +575,9 @@
   top: 0px;
   width: 428px;
   height: 275px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(2.381deg);
+  background-image: url('./imgae/eeCampPic/蛇舞照片_1.png');
 }
 
 .photo16 {
@@ -575,6 +587,7 @@
   width: 302px;
   height: 218px;
   transform: rotate(-2.31deg);
+  background-image: url('./imgae/eeCampPic/蛇舞照片_2.png');
 }
 
 /* Recruitment Photos */
@@ -583,9 +596,10 @@
   left: 100px;
   width: 481px;
   height: 321px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(3.495deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/招生照片_1.png');
 }
 
 .photo17 {
@@ -595,6 +609,7 @@
   height: 175px;
   transform: rotate(-4.576deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/招生照片_2.png');
 }
 
 /* Activity Photos */
@@ -604,9 +619,10 @@
   top: 0;
   width: 353px;
   height: 234px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(-5.296deg);
   z-index: 1;
+  background-image: url('./imgae/eeCampPic/活動照片_1.png');
 }
 
 .photo19 {
@@ -617,15 +633,16 @@
   height: 204px;
   transform: rotate(8.109deg);
   z-index: 2;
+  background-image: url('./imgae/eeCampPic/活動照片_2.png');
 }
 
 /* Course Photos */
 .photo20 {
-  
   width: 314px;
   height: 209px;
   transform: rotate(-3.227deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/課程照片_1.png');
 }
 
 .photo21 {
@@ -636,6 +653,7 @@
   height: 209px;
   transform: rotate(4.931deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/課程照片_2.png');
 }
 
 /* Equipment Photos */
@@ -646,6 +664,7 @@
   width: 389px;
   height: 277px;
   margin: 0;
+  background-image: url('./imgae/eeCampPic/場器照片_1.png');
 }
 
 .photo23 {
@@ -656,6 +675,7 @@
   height: 195px;
   transform: rotate(-4.428deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/場器照片_2.png');
 }
 
 .photo24 {
@@ -666,15 +686,17 @@
   height: 198px;
   transform: rotate(3.581deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/場器照片_3.png');
 }
 
 /* Art Photos */
 .photo25 {
   width: 244px;
   height: 325px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(7.882deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/美宣照片_1.png');
 }
 
 .photo26 {
@@ -685,15 +707,17 @@
   height: 182px;
   transform: rotate(-6.035deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/美宣照片_2.png');
 }
 
 /* Logistics Photos */
 .photo27 {
   width: 334px;
   height: 217px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(-6.198deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/生活照片_1.png');
 }
 
 .photo28 {
@@ -704,32 +728,141 @@
   height: 209px;
   transform: rotate(7.721deg);
   margin: 0;
+  background-image: url('./imgae/eeCampPic/生活照片_2.png');
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
   .content {
-    padding: 30px 40px;
+    padding: 140px 24px 40px 24px;
   }
 
-  .textBox,
-  .teamCard {
-    max-width: 90%;
+  /* Reduce section spacing */
+  .section {
+    margin-bottom: 60px;
   }
 
-  .introLayout {
+  .teamLayout,
+  .activityLayout,
+  .courseLayout,
+  .equipmentLayout {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  /* Stack all flex layouts vertically */
+  .introLayout,
+  .performanceLayout,
+  .teamLayout,
+  .activityLayout,
+  .courseLayout,
+  .equipmentLayout {
     flex-direction: column;
+    gap: 24px;
   }
 
+  .flagLayout {
+    flex-direction: column;
+    min-height: unset;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  /* Text / card always first */
+  .introTextSection {
+    order: 1;
+    width: 100%;
+  }
+
+  .textBox {
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .teamCard {
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 40px;
+  }
+
+  .flagLayout > .textBox {
+    order: 1;
+  }
+
+  /* Photos always second */
   .introPhotos {
-    flex-direction: row;
+    order: 2;
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-shrink: unset;
+    display: flex;
     flex-wrap: wrap;
     gap: 12px;
   }
 
-  .photoFrame {
-    max-width: 100%;
+  .performancePhotos,
+  .performanceLayout .performancePhotos {
+    order: 2;
+    position: relative;
+    width: 100%;
     height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .teamPhotos,
+  .coursePhotos,
+  .equipmentPhotos {
+    order: 2;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .flagLayout > .photoFrame {
+    order: 2;
+  }
+
+  .activityLayout > .photoFrame {
+    order: 2;
+  }
+
+  /* Reset all absolutely-positioned photo frames */
+  .photo1, .photo2, .photo3, .photo4, .photo5, .photo6,
+  .photo7, .photo8, .photo9, .photo10, .photo11,
+  .photo12, .photo13, .photo14, .photo15, .photo16,
+  .photo_17, .photo17, .photo18, .photo19,
+  .photo20, .photo21, .photo22, .photo23, .photo24,
+  .photo25, .photo26, .photo27, .photo28 {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    margin: 0;
+    width: calc(50% - 6px);
+    height: 200px;
+  }
+
+  /* photo9 has a decorative ::after frame, disable it on mobile */
+  .photo9::after {
+    display: none;
+  }
+
+  /* activityLayout: photos sit alongside the card in column flow */
+  .activityLayout {
+    align-items: stretch;
+    min-height: unset;
   }
 }
 
@@ -738,58 +871,76 @@
     height: 80px;
   }
 
+  .closeBtn {
+    width: 48px;
+    height: 48px;
+    right: 16px;
+    top: 16px;
+    font-size: 20px;
+  }
+
+  .titleGroup {
+    left: 16px;
+    top: 16px;
+    width: auto;
+  }
+
   .title,
   .titleBlur,
   .titleBlur2 {
-    font-size: 36px;
-  }
-
-  .closeBtn {
-    width: 50px;
-    height: 50px;
-    right: 20px;
-    top: 15px;
+    font-size: 32px;
   }
 
   .content {
-    padding: 20px;
+    padding: 100px 16px 40px 16px;
   }
 
   .sectionTitle {
-    font-size: 32px;
-    padding: 6px 25px;
+    font-size: 26px;
+    padding: 6px 18px;
   }
 
   .performanceTitle {
-    font-size: 24px;
-    padding: 8px 20px;
+    font-size: 20px;
+    padding: 6px 16px;
   }
 
   .text {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .teamText {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .teamBadge {
-    font-size: 24px;
-  }
-
-  .photoFrame {
-    margin: 10px 5px;
+    font-size: 20px;
   }
 
   .introTitleGraphic {
-    width: 200px;
+    width: 160px;
   }
 
   .introTitleText {
-    font-size: 32px;
+    font-size: 26px;
   }
 
-  .introLayout {
-    gap: 16px;
+  .textBox {
+    padding: 20px 24px;
+  }
+
+  .teamCard {
+    padding: 24px 28px;
+  }
+
+  /* On very small screens use full-width single-column photos */
+  .photo1, .photo2, .photo3, .photo4, .photo5, .photo6,
+  .photo7, .photo8, .photo9, .photo10, .photo11,
+  .photo12, .photo13, .photo14, .photo15, .photo16,
+  .photo_17, .photo17, .photo18, .photo19,
+  .photo20, .photo21, .photo22, .photo23, .photo24,
+  .photo25, .photo26, .photo27, .photo28 {
+    width: 100%;
+    height: 200px;
   }
 }
