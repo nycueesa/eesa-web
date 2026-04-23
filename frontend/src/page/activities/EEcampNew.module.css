@@ -391,7 +391,7 @@
 /* Photo Frames */
 .photoFrame {
   position: relative;
-  border: 10px solid white;
+  border: none;
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -429,7 +429,7 @@
   right: 80px;
   width: 425px;
   height: 283px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(3deg);
   z-index: 1;
   background-image: url('./imgae/eeCampPic/火球照片_1.jpg');
@@ -475,7 +475,7 @@
   left: 100px;
   width: 382px;
   height: 255px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(3.312deg);
   z-index: 2;
   background-image: url('./imgae/eeCampPic/火棍照片_1.jpg');
@@ -575,7 +575,7 @@
   top: 0px;
   width: 428px;
   height: 275px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(2.381deg);
   background-image: url('./imgae/eeCampPic/蛇舞照片_1.jpg');
 }
@@ -596,7 +596,7 @@
   left: 100px;
   width: 481px;
   height: 321px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(3.495deg);
   margin: 0;
   background-image: url('./imgae/eeCampPic/招生照片_1.jpg');
@@ -619,7 +619,7 @@
   top: 0;
   width: 353px;
   height: 234px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(-5.296deg);
   z-index: 1;
   background-image: url('./imgae/eeCampPic/活動照片_1.jpg');
@@ -693,7 +693,7 @@
 .photo25 {
   width: 244px;
   height: 325px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(7.882deg);
   margin: 0;
   background-image: url('./imgae/eeCampPic/美宣照片_1.jpg');
@@ -714,7 +714,7 @@
 .photo27 {
   width: 334px;
   height: 217px;
-  border-width: 15px;
+  /* border-width: 15px; */
   transform: rotate(-6.198deg);
   margin: 0;
   background-image: url('./imgae/eeCampPic/生活照片_1.jpg');
