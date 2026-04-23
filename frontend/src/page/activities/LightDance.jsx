@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './SooCamp.module.css';
+import styles from './LightDance.module.css';
 import activityIntroShape from './imgae/活動介紹.svg';
 import performanceIntroShape from './imgae/共練介紹.svg';
 import teamIntroShape from './imgae/各組介紹.svg';

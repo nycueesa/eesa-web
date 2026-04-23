@@ -208,8 +208,9 @@
 }
 
 .performanceTitle {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 20px;
   font-family: 'Zen Kurenaido', sans-serif;
   font-size: 32px;
   color: black;
@@ -223,11 +224,16 @@
 .textBox {
   position: relative;
   background: white;
+  min-height: 250px;
+  min-width: 600px;
   border-radius: 27px;
   padding: 30px 40px;
   margin-bottom: 30px;
   box-shadow: 0 0 15.9px rgba(255, 255, 255, 0.5);
   max-width: 663px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text {
@@ -237,6 +243,8 @@
   line-height: 1.6;
   margin: 0;
   white-space: pre-wrap;
+  text-align: center;
+  align-items: center;
 }
 
 /* Intro layout */
