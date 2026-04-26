@@ -3,7 +3,9 @@
     "allow": [
       "mcp__figma__get_design_context",
       "mcp__figma__get_screenshot",
-      "mcp__figma__get_metadata"
+      "mcp__figma__get_metadata",
+      "Bash(curl -s -o /tmp/figma-selection.png \"https://www.figma.com/api/mcp/asset/33081c36-f77d-42b6-8b4b-a5c3cfe53bff\")",
+      "Read(//tmp/**)"
     ]
   }
 }

@@ -1,51 +1,27 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import styles from "./TechnicalActivities.module.css";
+import { useNavigate, useParams } from "react-router-dom";
+import styles from "./Activities.module.css";
+import departments from "./departments.json";
 
-export default function TechnicalActivities() {
+export default function DepartmentActivities() {
     const navigate = useNavigate();
+    const { slug } = useParams();
+    const data = departments[slug];
 
-    const activities = [
-        {
-            name: "系學會網頁",
-            image: "/intro/activities/department-website.jpg",
-            link: "/intro/technical-activities/eesa-web"
-        },
-        {
-            name: "高中生參訪",
-            image: "/intro/activities/high-school-visit.jpg",
-            link: "/intro/technical-activities/high-school-visit"
-        },
-        {
-            name: "一日營硬體課程",
-            image: "/intro/activities/hardware-course.jpg",
-            link: "/intro/technical-activities/hardware-course"
-        },
-        {
-            name: "一日營軟體課程",
-            image: "/intro/activities/software-course.jpg",
-            link: "/intro/technical-activities/software-course"
-        },
-        {
-            name: "光棍",
-            image: "/intro/activities/singles-day.jpg",
-            link: "/intro/technical-activities/singles-day"
-        },
-        {
-            name: "選課大會",
-            image: "/intro/activities/course-selection.jpg",
-            link: "/intro/technical-activities/course-selection"
-        }
-    ];
+    if (!data) {
+        return <div style={{ padding: 40 }}>找不到此部門：{slug}</div>;
+    }
+
+    const activities = data.activities || [];
 
     return (
-        <div className={styles.technicalActivitiesPage}>
+        <div className={styles.page}>
             {/* Banner */}
             <div className={styles.banner}>
                 <img
-                    src="/intro/technical-banner.jpg"
-                    alt="學術部 TECHNICAL"
+                    src={data.bannerImage}
+                    alt={`${data.title} Banner`}
                     className={styles.bannerImage}
                 />
             </div>
@@ -67,7 +43,7 @@ export default function TechnicalActivities() {
                             </div>
                             <div
                                 className={styles.sidebarLabel}
-                                onClick={() => navigate("/intro/technical")}
+                                onClick={() => navigate(`/intro/${slug}`)}
                                 style={{ cursor: "pointer" }}
                             >
                                 部門介紹
@@ -75,35 +51,43 @@ export default function TechnicalActivities() {
                             <div className={`${styles.sidebarLabel} ${styles.active}`}>
                                 部門活動
                             </div>
+                            {(data.extraSidebarItems || []).map((item, idx) => (
+                                <div
+                                    key={idx}
+                                    className={styles.sidebarLabel}
+                                    onClick={item.to ? () => navigate(item.to) : undefined}
+                                    style={item.to ? { cursor: "pointer" } : undefined}
+                                >
+                                    {item.label}
+                                </div>
+                            ))}
                         </div>
                     </Col>
 
                     {/* Main Content */}
                     <Col md={10} className={styles.mainCol}>
-                        {/* 學術部 活動介紹 */}
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>學術部 活動介紹＆工作成果</h2>
+                            <h2 className={styles.sectionTitle}>{data.title} 活動介紹＆工作成果</h2>
                             <p className={styles.sectionDescription}>
                                 點擊活動名稱以了解更多關於該項活動的資訊
                             </p>
                             <div className={styles.divider}></div>
                         </section>
 
-                        {/* Activities Grid */}
                         <div className={styles.activitiesGrid}>
-                            {activities.map((activity, idx) => (
+                            {activities.map((activity) => (
                                 <div
-                                    key={idx}
+                                    key={activity.slug}
                                     className={styles.activityCard}
-                                    onClick={() => activity.link && navigate(activity.link)}
-                                    style={{ cursor: activity.link ? "pointer" : "default" }}
+                                    onClick={() => navigate(`/intro/${slug}/activities/${activity.slug}`)}
+                                    style={{ cursor: "pointer" }}
                                 >
-                                    <h3 className={styles.activityTitle}>{activity.name}</h3>
+                                    <h3 className={styles.activityCardTitle}>{activity.name}</h3>
                                     <div className={styles.imageWrapper}>
                                         <img
                                             src={activity.image}
                                             alt={activity.name}
-                                            className={styles.activityImage}
+                                            className={styles.activityCardImage}
                                         />
                                     </div>
                                     <div className={styles.cardDivider}></div>
