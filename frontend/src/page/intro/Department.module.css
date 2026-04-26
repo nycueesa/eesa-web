@@ -1,4 +1,4 @@
-.page {
+.departmentPage {
     background-color: #ffffff;
     min-height: 100vh;
     position: relative;
@@ -76,6 +76,13 @@
     background-color: #f0f0f0;
 }
 
+.sidebarLabel.active {
+    background-color: white;
+    border: 4px solid #2b3070;
+    border-radius: 4px;
+    color: #000000;
+}
+
 /* Main Content */
 .mainCol {
     padding-left: 3%;
@@ -83,116 +90,71 @@
     padding-top: 40px;
 }
 
-/* Activity Detail Section */
-.activityDetail {
+.section {
     margin-bottom: 40px;
 }
 
-.activityTitle {
+.sectionTitle {
     font-family: 'Rounded Mplus 1c', sans-serif;
     font-size: 32px;
     font-weight: 500;
     color: #293768;
     letter-spacing: 1.6px;
-    line-height: 75px;
+    line-height: 50px;
     margin-bottom: 20px;
 }
 
-.contentRow {
-    display: flex;
-    gap: 65px;
-    align-items: flex-start;
+.sectionContent {
+    margin-top: 30px;
 }
 
-.imageContainer {
-    flex-shrink: 0;
-    width: 489px;
-    height: 317px;
-    overflow: hidden;
-    border: 1px solid black;
-}
-
-.activityImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.descriptionContainer {
-    flex: 1;
-}
-
-.description {
+.contentText {
     font-family: 'Rounded Mplus 1c', 'Noto Sans JP', sans-serif;
     font-size: 24px;
     font-weight: 400;
     color: #000000;
     line-height: 50px;
     letter-spacing: 1.2px;
-    text-indent: 3em;
+    text-indent: 2em;
+    margin-bottom: 0;
 }
 
-.bottomDivider {
+.divider {
     width: 100%;
     height: 1px;
     background-color: #000000;
-    margin: 60px 0 40px 0;
+    margin: 40px 0;
 }
 
-/* Navigation Buttons */
-.navButtons {
+/* Photo Section */
+.photoSection {
+    margin-top: 30px;
     display: flex;
-    justify-content: flex-end;
-    gap: 0;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
-.navButton {
-    font-family: 'Rounded Mplus 1c', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: #000000;
-    text-align: center;
-    letter-spacing: 1.2px;
-    line-height: 75px;
-    width: 133px;
-    height: 60px;
+.photoPlaceholder {
+    width: 659px;
+    height: 350px;
+    background-color: #d9d9d9;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    overflow: hidden;
 }
 
-.navButton:hover {
-    background-color: #f0f0f0;
+.groupPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .contentRow {
-        gap: 40px;
-    }
-
-    .imageContainer {
-        width: 400px;
-        height: 260px;
-    }
-}
-
-@media (max-width: 992px) {
-    .contentRow {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .imageContainer {
+    .photoPlaceholder {
         width: 100%;
-        max-width: 489px;
-        height: auto;
-        aspect-ratio: 489 / 317;
-    }
-
-    .descriptionContainer {
-        width: 100%;
+        max-width: 659px;
     }
 }
 
@@ -205,26 +167,17 @@
         padding: 20px 15px;
     }
 
-    .activityTitle {
+    .sectionTitle {
         font-size: 24px;
         line-height: 1.4;
     }
 
-    .description {
+    .contentText {
         font-size: 18px;
         line-height: 1.8;
     }
 
-    .imageContainer {
-        max-width: 100%;
-    }
-
-    .navButtons {
-        justify-content: center;
-    }
-
-    .navButton {
-        font-size: 18px;
-        width: 100px;
+    .photoPlaceholder {
+        height: 250px;
     }
 }

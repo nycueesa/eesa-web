@@ -1,18 +1,25 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import styles from "./Operations.module.css";
+import { useNavigate, useParams } from "react-router-dom";
+import styles from "./Department.module.css";
+import departments from "./departments.json";
 
-export default function Operations() {
+export default function Department() {
     const navigate = useNavigate();
+    const { slug } = useParams();
+    const data = departments[slug];
+
+    if (!data) {
+        return <div style={{ padding: 40 }}>找不到此部門：{slug}</div>;
+    }
 
     return (
-        <div className={styles.operationsPage}>
+        <div className={styles.departmentPage}>
             {/* Banner */}
             <div className={styles.banner}>
                 <img
-                    src="/intro/operations-banner.jpg"
-                    alt="Operations Banner"
+                    src={data.bannerImage}
+                    alt={`${data.title} Banner`}
                     className={styles.bannerImage}
                 />
             </div>
@@ -37,44 +44,47 @@ export default function Operations() {
                             </div>
                             <div
                                 className={styles.sidebarLabel}
-                                onClick={() => navigate("/intro/operations-activities")}
+                                onClick={() => navigate(`/intro/${slug}/activities`)}
                                 style={{ cursor: "pointer" }}
                             >
                                 部門活動
                             </div>
-                            <div className={styles.sidebarLabel}>
-                                學習能力
-                            </div>
-                            <div className={styles.sidebarLabel}>
-                                體驗談
-                            </div>
+                            {(data.extraSidebarItems || []).map((item, idx) => (
+                                <div
+                                    key={idx}
+                                    className={styles.sidebarLabel}
+                                    onClick={item.to ? () => navigate(item.to) : undefined}
+                                    style={item.to ? { cursor: "pointer" } : undefined}
+                                >
+                                    {item.label}
+                                </div>
+                            ))}
                         </div>
                     </Col>
 
                     {/* Main Content */}
                     <Col md={10} className={styles.mainCol}>
-                        {/* 人力部簡介 */}
+                        {/* 簡介 */}
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>人力部簡介</h2>
+                            <h2 className={styles.sectionTitle}>{data.title}簡介</h2>
                             <div className={styles.sectionContent}>
-                                <p className={styles.contentText}>
-                                    歡迎來到人力部，人力部是個快樂吃飯開心聊八卦的地方！除了幾乎每周固定的部聚讓大家可以吃好喝好以外，我們還有一個環境很舒服，設備很齊全的部窩可以讓你休息！
-                                </p>
-                                <p className={styles.contentText}>
-                                    歡迎大家進入人力部裡學習如何當個優秀的領導人，或是增進自己不論是簡報或是發表的能力！
-                                </p>
+                                {data.introParagraphs.map((p, idx) => (
+                                    <p key={idx} className={styles.contentText}>
+                                        {p}
+                                    </p>
+                                ))}
                             </div>
                         </section>
 
-                        {/* 人力部 合照 */}
+                        {/* 合照 */}
                         <div className={styles.divider}></div>
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>人力部 合照</h2>
+                            <h2 className={styles.sectionTitle}>{data.title} 合照</h2>
                             <div className={styles.photoSection}>
                                 <div className={styles.photoPlaceholder}>
                                     <img
-                                        src="/intro/operations-group-photo.jpg"
-                                        alt="人力部合照"
+                                        src={data.groupPhotoImage}
+                                        alt={`${data.title}合照`}
                                         className={styles.groupPhoto}
                                     />
                                 </div>
@@ -87,7 +97,7 @@ export default function Operations() {
                             <h2 className={styles.sectionTitle}>部員名單</h2>
                             <div className={styles.sectionContent}>
                                 <p className={styles.contentText}>
-                                    致力於服務系上同學，舉辦各項活動並促進師生交流。組織包含會長與四大部門
+                                    {data.memberDescription}
                                 </p>
                             </div>
                         </section>
