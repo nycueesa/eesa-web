@@ -30,3 +30,8 @@ logs/
 .DS_Store
 .hintrc
 **/AGENTS.md
+
+# Claude Code 相關
+.claude/
+**/CLAUDE.md
+figma-selection.png
