@@ -126,6 +126,49 @@
     margin: 40px 0;
 }
 
+/* Skills Page Styles */
+.skillsMainTitle {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #293768;
+    margin-bottom: 10px;
+}
+
+.skillsSubTitle {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.skillsContent {
+    margin-top: 40px;
+}
+
+.skillSection {
+    margin-bottom: 50px;
+}
+
+.skillItemTitle {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #293768; /* 接近圖片中的深藍色 */
+    margin-bottom: 15px;
+}
+
+.skillItemContent {
+    font-family: 'Rounded Mplus 1c', 'Noto Sans JP', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+    text-indent: 2em;
+    margin-bottom: 0;
+}
+
 /* Photo Section */
 .photoSection {
     margin-top: 30px;
