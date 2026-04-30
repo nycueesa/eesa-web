@@ -74,11 +74,25 @@ export default function Activity() {
 
                             <div className={styles.contentRow}>
                                 <div className={styles.imageContainer}>
-                                    <img
-                                        src={activity.image}
-                                        alt={activity.name}
-                                        className={styles.activityImage}
-                                    />
+                                    {activity.detailImages && activity.detailImages.length > 0 ? (
+                                        activity.detailImages.map((img, idx) => (
+                                            <img
+                                                key={idx}
+                                                src={img}
+                                                alt={`${activity.name}-${idx}`}
+                                                className={styles.activityImage}
+                                                style={idx > 0 ? { marginTop: '20px' } : {}}
+                                                onError={(e) => console.error("Image load error:", img)}
+                                            />
+                                        ))
+                                    ) : (
+                                        <img
+                                            src={activity.image}
+                                            alt={activity.name}
+                                            className={styles.activityImage}
+                                            onError={(e) => console.error("Image load error:", activity.image)}
+                                        />
+                                    )}
                                 </div>
                                 <div className={styles.descriptionContainer}>
                                     {activity.description.map((p, i) => (

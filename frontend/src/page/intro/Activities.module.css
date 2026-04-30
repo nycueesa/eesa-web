@@ -207,8 +207,7 @@
 .imageContainer {
     flex-shrink: 0;
     width: 489px;
-    height: 317px;
-    overflow: hidden;
+    /* Remove fixed height and overflow to allow multiple images */
 }
 
 .activityImage {

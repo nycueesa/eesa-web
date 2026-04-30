@@ -12,7 +12,49 @@
       { "label": "學習能力" },
       { "label": "體驗談" }
     ],
-    "activities": []
+    "activities": [
+      {
+        "slug": "one-day-camp",
+        "name": "電機系一日營",
+        "image": "/intro/activities/one-day-camp.png",
+        "detailImages": [
+          "/intro/activities/one-day-camp.png",
+          "/intro/activities/one-day-camp-2.png"
+        ],
+        "description": [
+          "電機系一日營是一年一度會在寒假舉辦給全台灣高中生的實作課程營隊。會從人力部中選出總召群，以及從整個系學會中選出優秀的學長姐擔任隊輔。",
+          "此活動除了能夠增進台灣高中生對於電機系的認知，同時也可以當作一個高中生學弟妹與已經進入大學兩三年的學長姐的溝通橋樑。",
+          "活動團隊將於四日內走訪四縣市，雖行程緊湊、任務繁重，但過程中得以結識優秀學弟妹，一覽各地風光，收穫豐富而深刻。"
+        ]
+      },
+      {
+        "slug": "group-interview",
+        "name": "團體面試",
+        "image": "/intro/activities/group_interview.png",
+        "detailImages": [
+          "/intro/activities/group_interview.png",
+          "/intro/activities/group_interview_2.png"
+        ],
+        "description": [
+          "團體面試是高中生申請入學至交大電機系的第二階段面談。人力部會選出總召，作為系主任、系辦與學生之間的溝通橋樑，協調並執行相關事務，同時聯繫系學會成員擔任隊輔。",
+          "隊輔除了協助團體面試流程順利進行、與高中生及家長互動外，也會在面談過程中以學生的角度分享交大電機的學習與生活經驗，讓考生能更全面了解系所特色與氛圍。"
+        ]
+      },
+      {
+        "slug": "graduation",
+        "name": "小畢典",
+        "image": "/intro/activities/graduation.png",
+        "detailImages": [
+          "/intro/activities/graduation.png",
+          "/intro/activities/graduation_2.png"
+        ],
+        "description": [
+          "小畢典是由系學會辦給電機系大四畢業生的溫馨活動。在正式畢業典禮後，我們以更貼近系上的方式，一同回顧四年來的點點滴滴。",
+          "活動中將舉行頒獎、撥穗儀式，並安排精彩的回顧影片，讓每位畢業生都能留下屬於電機人的最後回憶。",
+          "這不僅是道別的時刻，更是慶祝成長與感謝同行的溫暖聚會。讓我們一起，在小畢典畫下青春最亮眼的句點！"
+        ]
+      }
+    ]
   },
   "publicity": {
     "title": "行銷部",
