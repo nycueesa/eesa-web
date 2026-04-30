@@ -206,15 +206,73 @@
 
 .imageContainer {
     flex-shrink: 0;
-    width: 489px;
-    height: 317px;
-    overflow: hidden;
+    width: 580px; /* 增加寬度 (489 + 左右空間) 以容納外部箭頭 */
+    display: flex;
+    flex-direction: column; /* 改為垂直排列 */
+    align-items: center;    /* 置中對齊 */
 }
 
 .activityImage {
-    width: 100%;
-    height: 100%;
+    width: 489px; /* 保持原始圖片寬度 */
+    height: auto;
     object-fit: cover;
+}
+
+/* Carousel Styles */
+.carouselWrapper {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activityImageCarousel {
+    width: 489px; /* 保持原始圖片寬度 */
+    height: 317px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.prevArrow, .nextArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 10;
+    padding: 0;
+}
+
+.prevArrow:hover, .nextArrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* 將箭頭精確定位在 489px 圖片的兩側外 */
+.nextArrow {
+    left: 0px; 
+}
+
+.prevArrow {
+    right: 0px; 
+}
+
+/* 強制統一箭頭圖案的大小 */
+.arrowImg {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: fill; /* 強制填滿容器，確保兩邊視覺大小絕對一致 */
+    display: block;
 }
 
 .descriptionContainer {
@@ -280,7 +338,7 @@
 
     .imageContainer {
         width: 400px;
-        height: 260px;
+        /* Remove fixed height */
     }
 }
 
@@ -294,7 +352,7 @@
         width: 100%;
         max-width: 489px;
         height: auto;
-        aspect-ratio: 489 / 317;
+        /* Remove aspect-ratio to prevent squashing/hiding images */
     }
 
     .descriptionContainer {

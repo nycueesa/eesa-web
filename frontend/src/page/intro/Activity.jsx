@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Activities.module.css";
@@ -8,6 +8,9 @@ export default function Activity() {
     const navigate = useNavigate();
     const { slug, activitySlug } = useParams();
     const data = departments[slug];
+    
+    // 輪播索引狀態
+    const [currentImgIdx, setCurrentImgIdx] = useState(0);
 
     if (!data) {
         return <div style={{ padding: 40 }}>找不到此部門：{slug}</div>;
@@ -23,6 +26,18 @@ export default function Activity() {
     const activity = activities[idx];
     const prev = idx > 0 ? activities[idx - 1] : null;
     const next = idx < activities.length - 1 ? activities[idx + 1] : null;
+
+    // 判斷是否需要輪播功能 (活動攝影 或 宣傳貼文)
+    const isCarousel = slug === "publicity" && (activitySlug === "photography" || activitySlug === "social-posts");
+    const detailImages = activity.detailImages || (activity.image ? [activity.image] : []);
+
+    const handleNextImg = () => {
+        setCurrentImgIdx((prevIdx) => (prevIdx + 1) % detailImages.length);
+    };
+
+    const handlePrevImg = () => {
+        setCurrentImgIdx((prevIdx) => (prevIdx - 1 + detailImages.length) % detailImages.length);
+    };
 
     return (
         <div className={styles.page}>
@@ -74,11 +89,46 @@ export default function Activity() {
 
                             <div className={styles.contentRow}>
                                 <div className={styles.imageContainer}>
-                                    <img
-                                        src={activity.image}
-                                        alt={activity.name}
-                                        className={styles.activityImage}
-                                    />
+                                    {isCarousel ? (
+                                        <div className={styles.carouselWrapper}>
+                                            <img
+                                                src={detailImages[currentImgIdx]}
+                                                alt={`${activity.name}-${currentImgIdx}`}
+                                                className={styles.activityImageCarousel}
+                                                onError={(e) => console.error("Image load error:", detailImages[currentImgIdx])}
+                                            />
+                                            {detailImages.length > 1 && (
+                                                <>
+                                                    <button className={styles.prevArrow} onClick={handlePrevImg}>
+                                                        <img src="/intro/activities/arrow_left.png" alt="Previous" className={styles.arrowImg} />
+                                                    </button>
+                                                    <button className={styles.nextArrow} onClick={handleNextImg}>
+                                                        <img src="/intro/activities/arrow_right.png" alt="Next" className={styles.arrowImg} />
+                                                    </button>
+                                                </>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        activity.detailImages && activity.detailImages.length > 0 ? (
+                                            activity.detailImages.map((img, idx) => (
+                                                <img
+                                                    key={idx}
+                                                    src={img}
+                                                    alt={`${activity.name}-${idx}`}
+                                                    className={styles.activityImage}
+                                                    style={idx > 0 ? { marginTop: '20px' } : {}}
+                                                    onError={(e) => console.error("Image load error:", img)}
+                                                />
+                                            ))
+                                        ) : (
+                                            <img
+                                                src={activity.image}
+                                                alt={activity.name}
+                                                className={styles.activityImage}
+                                                onError={(e) => console.error("Image load error:", activity.image)}
+                                            />
+                                        )
+                                    )}
                                 </div>
                                 <div className={styles.descriptionContainer}>
                                     {activity.description.map((p, i) => (
