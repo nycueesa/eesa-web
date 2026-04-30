@@ -11,6 +11,7 @@ import EesaIntro from "./page/intro/EesaIntro.jsx"
 import Department from "./page/intro/Department.jsx";
 import DepartmentActivities from "./page/intro/DepartmentActivities.jsx";
 import DepartmentSkills from "./page/intro/DepartmentSkills.jsx";
+import DepartmentExperiences from "./page/intro/DepartmentExperiences.jsx";
 import Activity from "./page/intro/Activity.jsx";
 import EventIntro from "./page/event/EventIntro.jsx"
 import NewInfo from "./page/event/NewInfo.jsx"
@@ -39,6 +40,7 @@ function App(){
 					<Route path="/intro/:slug" element={<Department />} />
 					<Route path="/intro/:slug/activities" element={<DepartmentActivities />} />
 					<Route path="/intro/:slug/skills" element={<DepartmentSkills />} />
+					<Route path="/intro/:slug/experiences/:expId" element={<DepartmentExperiences />} />
 					<Route path="/intro/:slug/activities/:activitySlug" element={<Activity />} />
 
 					<Route path="/event/event-intro" element={<EventIntro />} />

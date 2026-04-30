@@ -169,6 +169,97 @@
     margin-bottom: 0;
 }
 
+/* Skills Page Styles — ... existing styles ... */
+
+/* Experiences Detail Page Styles */
+.expHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.expTitle {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #293768;
+    letter-spacing: 1.6px;
+}
+
+.expNav {
+    display: flex;
+    align-items: center;
+}
+
+.expNavBtn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.expNavBtn:hover {
+    color: #293768;
+}
+
+.expContentBody {
+    display: flex;
+    flex-direction: row; /* 強制橫向並列 */
+    align-items: flex-start;
+    gap: 60px; /* 圖文之間的間距 */
+    margin-top: 40px;
+    width: 100%;
+}
+
+.expImagesSide {
+    flex: 0 0 489px; /* 固定圖片寬度 */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.expTextSide {
+    flex: 1; /* 文字佔滿剩餘空間 */
+}
+
+.expImageWrapper {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.expImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.expImagePlaceholder {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 20px;
+    border: 1px dashed #ccc;
+}
+
+.expTextCol {
+    padding-top: 20px;
+}
+
+.expFooter {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
 /* Photo Section */
 .photoSection {
     margin-top: 30px;
