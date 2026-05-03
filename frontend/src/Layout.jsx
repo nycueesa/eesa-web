@@ -113,11 +113,6 @@ export default function Layout({ children }) {
             navigate(positions, { replace: true });
         }
     }, [navigate, positions, location.pathname]);
-        console.log(positions);
-        if (positions !== location.pathname) {
-            navigate(positions, { replace: true });
-        }
-    }, [navigate, positions, location.pathname]);
 
     return (
         <div>

@@ -391,7 +391,7 @@
 /* Photo Frames */
 .photoFrame {
   position: relative;
-  border: none;
+  border: 10px solid white;
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -429,7 +429,7 @@
   right: 80px;
   width: 425px;
   height: 283px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(3deg);
   z-index: 1;
   background-image: url('./imgae/eeCampPic/火球照片_1.jpg');
@@ -475,7 +475,7 @@
   left: 100px;
   width: 382px;
   height: 255px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(3.312deg);
   z-index: 2;
   background-image: url('./imgae/eeCampPic/火棍照片_1.jpg');
@@ -575,7 +575,7 @@
   top: 0px;
   width: 428px;
   height: 275px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(2.381deg);
   background-image: url('./imgae/eeCampPic/蛇舞照片_1.jpg');
 }
@@ -596,7 +596,7 @@
   left: 100px;
   width: 481px;
   height: 321px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(3.495deg);
   margin: 0;
   background-image: url('./imgae/eeCampPic/招生照片_1.jpg');
@@ -619,7 +619,7 @@
   top: 0;
   width: 353px;
   height: 234px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(-5.296deg);
   z-index: 1;
   background-image: url('./imgae/eeCampPic/活動照片_1.jpg');
@@ -693,7 +693,7 @@
 .photo25 {
   width: 244px;
   height: 325px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(7.882deg);
   margin: 0;
   background-image: url('./imgae/eeCampPic/美宣照片_1.jpg');
@@ -714,7 +714,7 @@
 .photo27 {
   width: 334px;
   height: 217px;
-  /* border-width: 15px; */
+  border-width: 15px;
   transform: rotate(-6.198deg);
   margin: 0;
   background-image: url('./imgae/eeCampPic/生活照片_1.jpg');
@@ -737,23 +737,10 @@
     padding: 140px 24px 40px 24px;
   }
 
-  /* Reduce section spacing */
-  .section {
-    margin-bottom: 60px;
-    padding: 140px 24px 40px 24px;
-  }
-
-  /* Reduce section spacing */
   .section {
     margin-bottom: 60px;
   }
 
-  .teamLayout,
-  .activityLayout,
-  .courseLayout,
-  .equipmentLayout {
-    margin-top: 40px;
-    margin-bottom: 40px;
   .teamLayout,
   .activityLayout,
   .courseLayout,
@@ -769,51 +756,10 @@
   .activityLayout,
   .courseLayout,
   .equipmentLayout {
-  /* Stack all flex layouts vertically */
-  .introLayout,
-  .performanceLayout,
-  .teamLayout,
-  .activityLayout,
-  .courseLayout,
-  .equipmentLayout {
     flex-direction: column;
     gap: 24px;
-    gap: 24px;
   }
 
-  .flagLayout {
-    flex-direction: column;
-    min-height: unset;
-    gap: 16px;
-    margin-top: 40px;
-  }
-
-  /* Text / card always first */
-  .introTextSection {
-    order: 1;
-    width: 100%;
-  }
-
-  .textBox {
-    order: 1;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .teamCard {
-    order: 1;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 40px;
-  }
-
-  .flagLayout > .textBox {
-    order: 1;
-  }
-
-  /* Photos always second */
   .flagLayout {
     flex-direction: column;
     min-height: unset;
@@ -854,21 +800,10 @@
     height: auto;
     flex-shrink: unset;
     display: flex;
-    order: 2;
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-shrink: unset;
-    display: flex;
     flex-wrap: wrap;
     gap: 12px;
   }
 
-  .performancePhotos,
-  .performanceLayout .performancePhotos {
-    order: 2;
-    position: relative;
-    width: 100%;
   .performancePhotos,
   .performanceLayout .performancePhotos {
     order: 2;
@@ -930,55 +865,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-  }
-
-  .teamPhotos,
-  .coursePhotos,
-  .equipmentPhotos {
-    order: 2;
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .flagLayout > .photoFrame {
-    order: 2;
-  }
-
-  .activityLayout > .photoFrame {
-    order: 2;
-  }
-
-  /* Reset all absolutely-positioned photo frames */
-  .photo1, .photo2, .photo3, .photo4, .photo5, .photo6,
-  .photo7, .photo8, .photo9, .photo10, .photo11,
-  .photo12, .photo13, .photo14, .photo15, .photo16,
-  .photo_17, .photo17, .photo18, .photo19,
-  .photo20, .photo21, .photo22, .photo23, .photo24,
-  .photo25, .photo26, .photo27, .photo28 {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    transform: none;
-    margin: 0;
-    width: calc(50% - 6px);
-    height: 200px;
-  }
-
-  /* photo9 has a decorative ::after frame, disable it on mobile */
-  .photo9::after {
-    display: none;
-  }
-
-  /* activityLayout: photos sit alongside the card in column flow */
-  .activityLayout {
-    align-items: stretch;
-    min-height: unset;
   }
 }
 
@@ -1001,35 +887,17 @@
     width: auto;
   }
 
-  .closeBtn {
-    width: 48px;
-    height: 48px;
-    right: 16px;
-    top: 16px;
-    font-size: 20px;
-  }
-
-  .titleGroup {
-    left: 16px;
-    top: 16px;
-    width: auto;
-  }
-
   .title,
   .titleBlur,
   .titleBlur2 {
-    font-size: 32px;
     font-size: 32px;
   }
 
   .content {
     padding: 100px 16px 40px 16px;
-    padding: 100px 16px 40px 16px;
   }
 
   .sectionTitle {
-    font-size: 26px;
-    padding: 6px 18px;
     font-size: 26px;
     padding: 6px 18px;
   }
@@ -1037,52 +905,28 @@
   .performanceTitle {
     font-size: 20px;
     padding: 6px 16px;
-    font-size: 20px;
-    padding: 6px 16px;
   }
 
   .text {
-    font-size: 16px;
     font-size: 16px;
   }
 
   .teamText {
     font-size: 16px;
-    font-size: 16px;
   }
 
   .teamBadge {
-    font-size: 20px;
     font-size: 20px;
   }
 
   .introTitleGraphic {
     width: 160px;
-    width: 160px;
   }
 
   .introTitleText {
     font-size: 26px;
-    font-size: 26px;
   }
 
-  .textBox {
-    padding: 20px 24px;
-  }
-
-  .teamCard {
-    padding: 24px 28px;
-  }
-
-  /* On very small screens use full-width single-column photos */
-  .photo1, .photo2, .photo3, .photo4, .photo5, .photo6,
-  .photo7, .photo8, .photo9, .photo10, .photo11,
-  .photo12, .photo13, .photo14, .photo15, .photo16,
-  .photo_17, .photo17, .photo18, .photo19,
-  .photo20, .photo21, .photo22, .photo23, .photo24,
-  .photo25, .photo26, .photo27, .photo28 {
-    width: 100%;
-    height: 200px;
   .textBox {
     padding: 20px 24px;
   }
