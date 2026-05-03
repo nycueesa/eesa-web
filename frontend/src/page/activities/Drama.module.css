@@ -408,6 +408,7 @@
   height: 294px;
   transform: rotate(-5.127deg);
   z-index: 1;
+  background-image: url('./imgae/dramaPic/活動介紹照片_1.jpg');
 }
 
 .photo2 {
@@ -418,6 +419,7 @@
   height: 188px;
   transform: rotate(3.31deg);
   z-index: 2;
+  background-image: url('./imgae/dramaPic/活動介紹照片_2.jpg');
 }
 
 /* Fire Ball Photos */
@@ -430,6 +432,7 @@
   border-width: 15px;
   transform: rotate(3deg);
   z-index: 1;
+  background-image: url('./imgae/dramaPic/演員照片_1.jpg');
 }
 
 .photo4 {
@@ -441,6 +444,7 @@
   border-width: 10px;
   transform: rotate(-8deg);
   z-index: 2;
+  background-image: url('./imgae/dramaPic/演員照片_2.jpg');
 }
 
 .photo5 {
@@ -452,6 +456,7 @@
   border-width: 10px;
   transform: rotate(5deg);
   z-index: 3;
+  background-image: url('./imgae/dramaPic/演員照片_3.jpg');
 }
 
 .photo6 {
@@ -463,6 +468,7 @@
   border-width: 10px;
   transform: rotate(-3deg);
   z-index: 4;
+  background-image: url('./imgae/dramaPic/演員照片_4.jpg');
 }
 
 /* Fire Stick Photos */
@@ -475,6 +481,7 @@
   border-width: 15px;
   transform: rotate(3.312deg);
   z-index: 2;
+  background-image: url('./imgae/dramaPic/美宣照片_1.jpg');
 }
 
 .photo8 {
@@ -485,6 +492,7 @@
   height: 193px;
   transform: rotate(-3.123deg);
   z-index: 1;
+  background-image: url('./imgae/dramaPic/美宣照片_2.jpg');
 }
 
 /* Incense Fan Photos */
@@ -495,6 +503,7 @@
   height: 264px;
   border: none;
   transform: rotate(1.921deg);
+  background-image: url('./imgae/dramaPic/編劇照片_1.jpg');
 }
 
 .photo9::after {
@@ -516,6 +525,7 @@
   width: 261px;
   height: 190px;
   transform: rotate(7.528deg);
+  background-image: url('./imgae/dramaPic/編劇照片_2.jpg');
 }
 
 .photo11 {
@@ -536,6 +546,7 @@
   height: 209px;
   transform: rotate(3.36deg);
   z-index: 1;
+  background-image: url('./imgae/dramaPic/場控照片_1.jpg');
 }
 
 .photo13 {
@@ -546,6 +557,7 @@
   height: 218px;
   transform: rotate(-2.31deg);
   z-index: 2;
+  background-image: url('./imgae/dramaPic/場控照片_2.jpg');
 }
 
 .photo14 {
@@ -556,6 +568,7 @@
   height: 218px;
   transform: rotate(2.5deg);
   z-index: 1;
+  background-image: url('./imgae/dramaPic/場控照片_3.jpg');
 }
 
 /* Snake Dance Photos */

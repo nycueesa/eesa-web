@@ -94,9 +94,7 @@ export default function Layout({ children }) {
     const location = useLocation();
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const positions = useSelector((state) => state.positionPage);
-    const hideNavbar = location.pathname.startsWith('/activities');
     const hideNavbar = location.pathname.startsWith('/activities');
 
     // Save current path to redux whenever location changes
@@ -110,11 +108,6 @@ export default function Layout({ children }) {
     }, [location.pathname, dispatch]);
 
     useEffect(() => {
-        console.log(positions);
-        if (positions !== location.pathname) {
-            navigate(positions, { replace: true });
-        }
-    }, [navigate, positions, location.pathname]);
         console.log(positions);
         if (positions !== location.pathname) {
             navigate(positions, { replace: true });

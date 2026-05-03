@@ -416,6 +416,7 @@
   height: 294px;
   transform: rotate(-5.127deg);
   z-index: 1;
+  background-image: url('./imgae/lightDancePic/活動介紹照片_1.jpg');
 }
 
 .photo2 {
@@ -426,6 +427,7 @@
   height: 188px;
   transform: rotate(3.31deg);
   z-index: 2;
+  background-image: url('./imgae/lightDancePic/活動介紹照片_2.jpg');
 }
 
 /* Fire Ball Photos */
@@ -438,6 +440,7 @@
   border-width: 15px;
   transform: rotate(3deg);
   z-index: 1;
+  background-image: url('./imgae/lightDancePic/系統照片_1.jpg');
 }
 
 .photo4 {
@@ -449,6 +452,7 @@
   border-width: 10px;
   transform: rotate(-8deg);
   z-index: 2;
+  background-image: url('./imgae/lightDancePic/系統照片_2.jpg');
 }
 
 .photo5 {
@@ -460,6 +464,7 @@
   border-width: 10px;
   transform: rotate(5deg);
   z-index: 3;
+  background-image: url('./imgae/lightDancePic/系統照片_3.jpg');
 }
 
 .photo6 {
@@ -483,6 +488,7 @@
   border-width: 15px;
   transform: rotate(3.312deg);
   z-index: 2;
+  background-image: url('./imgae/lightDancePic/軟體照片_1.jpg');
 }
 
 .photo8 {
@@ -493,6 +499,7 @@
   height: 193px;
   transform: rotate(-3.123deg);
   z-index: 1;
+  background-image: url('./imgae/lightDancePic/軟體照片_2.jpg');
 }
 
 /* Incense Fan Photos */
@@ -503,6 +510,7 @@
   height: 264px;
   border: none;
   transform: rotate(1.921deg);
+  background-image: url('./imgae/lightDancePic/服裝照片_1.jpg');
 }
 
 .photo9::after {
@@ -524,6 +532,7 @@
   width: 261px;
   height: 190px;
   transform: rotate(7.528deg);
+  background-image: url('./imgae/lightDancePic/服裝照片_2.jpg');
 }
 
 .photo11 {
@@ -533,6 +542,7 @@
   width: 275px;
   height: 174px;
   transform: rotate(-6.713deg);
+  background-image: url('./imgae/lightDancePic/服裝照片_3.jpg');
 }
 
 /* Flag Photos */
@@ -544,6 +554,7 @@
   height: 209px;
   transform: rotate(3.36deg);
   z-index: 1;
+  background-image: url('./imgae/lightDancePic/宣傳照片_1.jpg');
 }
 
 .photo13 {
@@ -554,6 +565,7 @@
   height: 218px;
   transform: rotate(-2.31deg);
   z-index: 2;
+  background-image: url('./imgae/lightDancePic/宣傳照片_2.jpg');
 }
 
 .photo14 {
