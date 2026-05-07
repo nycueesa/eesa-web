@@ -14,11 +14,11 @@ import styles from "./Layout.module.css";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
     const menuItems = [
         { label: "系學會", icon: "/icons/user.svg", link: "/intro/eesa-intro" },
-        { label: "系上活動", icon: "/icons/calendar.svg", link: "/event/event-intro" },
+        { label: "系上活動", icon: "/icons/calendar.svg", link: "/event/timeline" },
         { label: "學習資料", icon: "/icons/book-open.svg", link: "/resource/prevexam" },
         { label: "系隊", icon: "/icons/globe.svg", link: "/team" },
         { label: "其他資料", icon: "/icons/link.svg", link: "/file/calendar" },
@@ -95,7 +95,7 @@ export default function Layout({ children }) {
 
     const dispatch = useDispatch();
     const positions = useSelector((state) => state.positionPage);
-    const hideNavbar = location.pathname.startsWith('/activities');
+    //const hideNavbar = location.pathname.startsWith('/activities');
 
     // Save current path to redux whenever location changes
     useEffect(() => {
@@ -116,8 +116,8 @@ export default function Layout({ children }) {
 
     return (
         <div>
-            {!hideNavbar && <Header />}
-            <main>{children}</main>
+             <Header />
+            <main className={styles.mainContent}>{children}</main>
             <Footer />
         </div>
     );

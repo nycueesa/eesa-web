@@ -43,9 +43,9 @@ function App(){
 					<Route path="/intro/:slug/experiences/:expId" element={<DepartmentExperiences />} />
 					<Route path="/intro/:slug/activities/:activitySlug" element={<Activity />} />
 
-					<Route path="/event/event-intro" element={<EventIntro />} />
-					<Route path="/event/new-info" element={<NewInfo />} />
-					<Route path="/event/timeline" element={<Timeline />} />
+					<Route path="/event/event-intro" element={<EventIntro />} /> //刪除
+					<Route path="/event/new-info" element={<NewInfo />} /> //刪除
+					<Route path="/event/timeline" element={<Timeline />} /> 
 
 					<Route path="/team" element={<Team />} />
 
