@@ -11,7 +11,7 @@
 /* Header */
 .header {
   position: fixed;
-  top: 0;
+  top: 100px;
   left: 0;
   background: rgba(31, 29, 73, 0.2);
   height: 124px;
