@@ -1,8 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import teamImg from "../../assets/team/team.jpg";
 import styles from "./Team.module.css";
 
+const teams = [
+  { label: "男籃", path: "/team/basketball-men" },
+  { label: "女籃", path: "/team/basketball-women" },
+  { label: "男排", path: null },
+  { label: "女排", path: "/team/volleyball-women" },
+  { label: "羽球", path: null },
+  { label: "桌球", path: null },
+  { label: "棒球", path: null },
+  { label: "網球", path: null },
+  { label: "足球", path: null },
+];
+
 export default function Team() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.page}>
       {/* Hero 圖 */}
@@ -20,15 +35,15 @@ export default function Team() {
         <div className={styles.divider} />
 
         <div className={styles.buttons}>
-          <button className={styles.teamBtn}>男籃</button>
-          <button className={styles.teamBtn}>女籃</button>
-          <button className={styles.teamBtn}>男排</button>
-          <button className={styles.teamBtn}>女排</button>
-          <button className={styles.teamBtn}>羽球</button>
-          <button className={styles.teamBtn}>桌球</button>
-          <button className={styles.teamBtn}>棒球</button>
-          <button className={styles.teamBtn}>網球</button>
-          <button className={styles.teamBtn}>足球</button>
+          {teams.map((team) => (
+            <button
+              key={team.label}
+              className={styles.teamBtn}
+              onClick={() => team.path && navigate(team.path)}
+            >
+              {team.label}
+            </button>
+          ))}
         </div>
       </section>
     </div>
