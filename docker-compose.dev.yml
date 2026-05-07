@@ -1,21 +1,34 @@
 services:
+  # === 前端服務 ===
   web-frontend-dev:
-    # Vite 7+ 需要 Node.js 20+，因此升級基礎映像檔
     image: node:20-alpine
     container_name: web-frontend-dev
     ports:
-      - 5566:5173
+      - "5566:5173"
     working_dir: /app
     volumes:
-      # 將本地 frontend 資料夾同步到容器中，實現熱修改
       - ./frontend:/app
-      # 使用一個 volume 來緩存 node_modules，避免每次重啟都重新安裝
       - frontend_web_node_modules:/app/node_modules
-    # 啟動時先安裝依賴，然後啟動 Vite 開發伺服器
     command: sh -c "npm install && npm run dev"
-    # depends_on:
-    #   backend:
-    #     condition: service_healthy
+    depends_on:
+      - web-backend-dev # 確保後端容器先啟動
+    networks:
+      - web-network
+
+  # === 後端服務 ===
+  web-backend-dev:
+    image: node:20-alpine # 為了統一，這裡也用 Node.js 20
+    container_name: web-backend-dev
+    ports:
+      - "5588:5588" # 假設你把之前不安全的 6000 port 改成了 3000
+    working_dir: /app
+    volumes:
+      # 將本地 backend 資料夾同步到容器中
+      - ./backend:/app
+      # 緩存後端的 node_modules
+      - backend_web_node_modules:/app/node_modules
+    # 啟動時先安裝依賴，然後用 nodemon 啟動 (支援存檔自動重啟，開發很方便)
+    command: sh -c "npm install && npx nodemon server.js"
     networks:
       - web-network
 
@@ -26,3 +39,4 @@ networks:
 
 volumes:
   frontend_web_node_modules:
+  backend_web_node_modules: # 新增後端的 node_modules volume
