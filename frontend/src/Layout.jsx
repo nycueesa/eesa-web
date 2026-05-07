@@ -1,4 +1,5 @@
-﻿import React from 'react';
+<<<<<<< HEAD
+import React from 'react';
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
@@ -8,6 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 
+=======
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from "react-router-dom";
+>>>>>>> 8399ea2cb6325191c4c6b3a28b02e701b9110dc9
 import { useSelector, useDispatch } from "react-redux";
 import { setPositionPage } from "./redux/commonSlice.js";
 import styles from "./Layout.module.css";
@@ -106,6 +111,7 @@ export default function Layout({ children }) {
         // 存 localStorage
         localStorage.setItem('lastPath', currentPath);
     }, [location.pathname, dispatch]);
+<<<<<<< HEAD
 
     useEffect(() => {
         console.log(positions);
@@ -113,6 +119,8 @@ export default function Layout({ children }) {
             navigate(positions, { replace: true });
         }
     }, [navigate, positions, location.pathname]);
+=======
+>>>>>>> 8399ea2cb6325191c4c6b3a28b02e701b9110dc9
 
     return (
         <div>
