@@ -350,6 +350,7 @@
   height: 275px;
   border-width: 15px;
   transform: rotate(2.381deg);
+  background-image: url('./imgae/eeWeek/OpenLab.jpg');
 }
 
 /* 企業參訪 Photo */
@@ -414,6 +415,7 @@
   border-width: 15px;
   transform: rotate(2.52deg);
   z-index: 1;
+  background-image: url('./imgae/eeWeek/養樂多大賽_1.jpg');
 }
 
 .photo15 {
@@ -425,6 +427,7 @@
   border-width: 10px;
   transform: rotate(-6.09deg);
   z-index: 2;
+  background-image: url('./imgae/eeWeek/養樂多大賽_2.jpg');
 }
 
 .photo16 {
@@ -436,6 +439,7 @@
   border-width: 10px;
   transform: rotate(7.47deg);
   z-index: 3;
+  background-image: url('./imgae/eeWeek/養樂多大賽_3.jpg');
 }
 
 /* Responsive Design */

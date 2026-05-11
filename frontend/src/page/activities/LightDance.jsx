@@ -14,7 +14,7 @@ const LightDance = () => {
       <div className={styles.header}>
         <button 
           className={styles.closeBtn} 
-          onClick={() => navigate('/activities')}
+          onClick={() => navigate('/event/timeline')}
           aria-label="關閉"
         >
           ✕
