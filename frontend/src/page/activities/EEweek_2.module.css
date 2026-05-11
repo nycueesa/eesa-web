@@ -288,6 +288,7 @@
   height: 294px;
   border-width: 10px;
   transform: rotate(7.53deg);
+  background-image: url('./imgae/eeWeek/公關部.jpg');
 }
 
 /* 宣傳部 Photo */
@@ -300,6 +301,7 @@
   border-width: 10px;
   transform: rotate(-3.02deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/宣傳部.jpg');
 }
 
 /* 課學部 Photo */
@@ -311,6 +313,7 @@
   height: 275px;
   border-width: 15px;
   transform: rotate(2.381deg);
+  background-image: url('./imgae/eeWeek/課學部.jpg');
 }
 
 /* 活動部 Photo */
@@ -323,6 +326,7 @@
   border-width: 15px;
   transform: rotate(-5.3deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/活動部.jpg');
 }
 
 /* 場器部 Photo */
@@ -334,6 +338,7 @@
   height: 305px;
   border-width: 10px;
   transform: rotate(4.24deg);
+  background-image: url('./imgae/eeWeek/場器部.jpg');
 }
 
 /* Open Lab Photos */
@@ -345,6 +350,7 @@
   border-width: 15px;
   transform: rotate(-6.2deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/OpenLab_1.jpg');
 }
 
 .photo9 {
@@ -355,6 +361,7 @@
   height: 198px;
   transform: rotate(3.58deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/OpenLab_2.jpg');
 }
 
 /* Responsive Design */

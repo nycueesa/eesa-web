@@ -287,6 +287,7 @@
   width: 273px;
   height: 179px;
   transform: rotate(-3.02deg);
+  background-image: url('./imgae/eeWeek/儀隊.jpg');
 }
 
 .photo4 {
@@ -308,6 +309,7 @@
   border-width: 10px;
   transform: rotate(-3.02deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/光球.jpg');
 }
 
 /* 光棍 Photo */
@@ -319,6 +321,7 @@
   height: 275px;
   border-width: 15px;
   transform: rotate(2.381deg);
+  background-image: url('./imgae/eeWeek/光棍.jpg');
 }
 
 /* 光舞 Photo */
@@ -331,6 +334,7 @@
   border: none;
   transform: rotate(4.64deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/光舞.jpg');
 }
 
 .photo7::after {
@@ -354,6 +358,7 @@
   height: 217px;
   border-width: 15px;
   transform: rotate(-6.198deg);
+  background-image: url('./imgae/eeWeek/樂團_1.jpg');
 }
 
 .photo9 {
@@ -363,6 +368,7 @@
   width: 314px;
   height: 209px;
   transform: rotate(7.721deg);
+  background-image: url('./imgae/eeWeek/樂團_2.jpg');
 }
 
 /* 長劇 Photo */
@@ -375,6 +381,7 @@
   border-width: 10px;
   transform: rotate(7.49deg);
   margin: 0;
+  background-image: url('./imgae/eeWeek/長劇_1.jpg');
 }
 
 /* Responsive Design */

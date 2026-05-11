@@ -12,7 +12,7 @@ const EEweek = () => {
       <div className={styles.header}>
         <button 
           className={styles.closeBtn} 
-          onClick={() => navigate('/activities')}
+          onClick={() => navigate('/event/timeline')}
           aria-label="關閉"
         >
           ✕
@@ -56,9 +56,9 @@ const EEweek = () => {
         {/* Navigation Buttons */}
         <section className={styles.navSection}>
           <div className={styles.navButtons}>
-            <button className={styles.navBtn}>各組介紹</button>
-            <button className={styles.navBtn}>細項活動</button>
-            <button className={styles.navBtn}>電夜表演</button>
+            <button className={styles.navBtn} onClick={() => navigate('/activities/eeweek-2')}>各組介紹</button>
+            <button className={styles.navBtn} onClick={() => navigate('/activities/eeweek')}>細項活動</button>
+            <button className={styles.navBtn} onClick={() => navigate('/activities/eeweek-1')}>電夜表演</button>
           </div>
         </section>
 
