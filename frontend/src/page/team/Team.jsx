@@ -6,13 +6,13 @@ import styles from "./Team.module.css";
 const teams = [
   { label: "男籃", path: "/team/basketball-men" },
   { label: "女籃", path: "/team/basketball-women" },
-  { label: "男排", path: null },
+  { label: "男排", path: "/team/volleyball-men" },
   { label: "女排", path: "/team/volleyball-women" },
-  { label: "羽球", path: null },
-  { label: "桌球", path: null },
-  { label: "棒球", path: null },
-  { label: "網球", path: null },
-  { label: "足球", path: null },
+  { label: "羽球", path: "/team/badminton" },
+  { label: "桌球", path: "/team/table-tennis" },
+  { label: "棒球", path: "/team/baseball" },
+  { label: "網球", path: "/team/tennis" },
+  { label: "足球", path: "/team/soccer" },
 ];
 
 export default function Team() {
