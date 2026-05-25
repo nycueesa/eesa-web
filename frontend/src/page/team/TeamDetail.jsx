@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "./TeamDetail.module.css";
 import teamsData from "../../data/teams.json";
 import { getTeamImage } from "./teamImages.js";
+
+const teamKeys = Object.keys(teamsData);
 
 function ScheduleBlock({ block }) {
   if (block.type === "paragraph") {
@@ -48,8 +50,22 @@ export default function TeamDetail() {
   const ballSrc = getTeamImage(team.ballIcon);
   const aboutSrc = getTeamImage(team.aboutImg);
 
+  const currentIndex = teamKeys.indexOf(teamKey);
+  const prevKey = currentIndex > 0 ? teamKeys[currentIndex - 1] : null;
+  const nextKey =
+    currentIndex >= 0 && currentIndex < teamKeys.length - 1
+      ? teamKeys[currentIndex + 1]
+      : null;
+  const prevTeam = prevKey ? teamsData[prevKey] : null;
+  const nextTeam = nextKey ? teamsData[nextKey] : null;
+
   return (
     <div className={styles.page}>
+      {/* 返回系隊介紹 */}
+      <Link to="/team" className={styles.backLink}>
+        ← 系隊介紹
+      </Link>
+
       {/* 標題 */}
       <h1 className={styles.pageTitle}>{team.name}</h1>
       <div className={styles.titleDivider} />
@@ -186,6 +202,29 @@ export default function TeamDetail() {
           </div>
         </section>
       )}
+
+      {/* 上一支／下一支 */}
+      <nav className={styles.bottomNav}>
+        {prevTeam ? (
+          <Link to={`/team/${prevKey}`} className={styles.navBtn}>
+            <span className={styles.navArrow}>←</span>
+            <span className={styles.navName}>{prevTeam.name}</span>
+          </Link>
+        ) : (
+          <span className={styles.navSpacer} />
+        )}
+        {nextTeam ? (
+          <Link
+            to={`/team/${nextKey}`}
+            className={`${styles.navBtn} ${styles.navBtnNext}`}
+          >
+            <span className={styles.navName}>{nextTeam.name}</span>
+            <span className={styles.navArrow}>→</span>
+          </Link>
+        ) : (
+          <span className={styles.navSpacer} />
+        )}
+      </nav>
     </div>
   );
 }
