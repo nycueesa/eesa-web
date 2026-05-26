@@ -468,6 +468,7 @@
   border-width: 10px;
   transform: rotate(-3deg);
   z-index: 4;
+  background-image: url('./imgae/siloPic/活動照片_3.jpg');
 }
 
 /* Fire Stick Photos */
@@ -528,6 +529,7 @@
 }
 
 .photo11 {
+  display: none;
   position: absolute;
   right: 280px;
   top: 250px;

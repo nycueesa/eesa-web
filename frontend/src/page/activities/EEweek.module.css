@@ -260,6 +260,7 @@
 
 /* Activity Introduction Photos */
 .photo1 {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -270,6 +271,7 @@
 }
 
 .photo2 {
+  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -281,6 +283,7 @@
 
 /* 擺攤 Photos */
 .photo3 {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -303,6 +306,7 @@
 }
 
 .photo4 {
+  display: none;
   position: absolute;
   right: 0px;
   top: 230px;
@@ -312,6 +316,7 @@
 }
 
 .photo5 {
+  display: none;
   position: absolute;
   right: 280px;
   top: 250px;
@@ -322,6 +327,7 @@
 
 /* 圓桌分享 Photos */
 .photo6 {
+  display: none;
   position: absolute;
   
   left: 100px;
@@ -332,6 +338,7 @@
 }
 
 .photo7 {
+  display: none;
   position: absolute;
   top: 150px;
   left: 0;
@@ -355,6 +362,7 @@
 
 /* 企業參訪 Photo */
 .photo9 {
+  display: none;
   position: absolute;
   top: 0px;
   left: 100px;
@@ -366,6 +374,7 @@
 
 /* 麻將大賽 Photos */
 .photo10 {
+  display: none;
   position: absolute;
   top: 0;
   right: 100px;
@@ -376,6 +385,7 @@
 }
 
 .photo11 {
+  display: none;
   position: absolute;
   top: 150px;
   right: 0;
@@ -386,6 +396,7 @@
 
 /* 電競比賽 Photo */
 .photo12 {
+  display: none;
   position: absolute;
   top: 0px;
   left: 100px;
@@ -397,6 +408,7 @@
 
 /* 人氣王 Photo */
 .photo13 {
+  display: none;
   position: absolute;
   top: 0;
   right: 100px;

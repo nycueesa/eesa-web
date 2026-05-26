@@ -260,6 +260,7 @@
 
 /* Activity Introduction Photos */
 .photo1 {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -270,6 +271,7 @@
 }
 
 .photo2 {
+  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -291,6 +293,7 @@
 }
 
 .photo4 {
+  display: none;
   position: absolute;
   top: 150px;
   left: 0;

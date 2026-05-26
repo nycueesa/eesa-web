@@ -74,7 +74,7 @@ const timelineData = [
   {
     month: "05",
     events: [
-      { date: "05.19 – 05.25", title: "電機週", type: "major", path: "/activities/eeweek" },
+      { date: "05.19 – 05.25", title: "電機週", type: "major"},
       { date: "05.25", title: "光舞表演", type: "major", path: "/activities/lightdance" },
     ],
   },
@@ -104,6 +104,7 @@ export default function Timeline() {
 
   const handleEventClick = (event) => {
     if (event.path) {
+      window.scrollTo(0, 0);
       navigate(event.path);
       return;
     }
@@ -170,6 +171,7 @@ export default function Timeline() {
               >
                 ✕
               </button>
+              <h3 className={styles.introTitle}>{activeIntro.title}</h3>
               <div className={styles.introPhotoRow}>
                 {activeIntro.intro.photos
                   .slice(photoPage * 2, photoPage * 2 + 2)

@@ -23,7 +23,8 @@
 .introSide {
   flex: 1;
   position: sticky;
-  top: 80px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* ===== Page Header ===== */
@@ -98,7 +99,7 @@
 }
 
 .yearBadge {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #0e1e31;
@@ -161,7 +162,7 @@
 
 .eventDate {
   min-width: 120px;
-  font-size: 13px;
+  font-size:18px;
   font-weight: 700;
   font-family: "Courier New", monospace;
   color: #ffb36a;
@@ -169,7 +170,7 @@
 }
 
 .eventTitle {
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 600;
   color: #f0f4ff;
 }
@@ -179,7 +180,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgb(255, 161, 60);
+  background: rgb(242, 133, 1);
   border: 3px solid rgba(255, 160, 60, 0.5);
   display: flex;
   align-items: center;
@@ -304,13 +305,24 @@
   height: 100%;
 }
 
+.introTitle {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: 0.08em;
+  font-family: "Noto Sans TC", Arial, sans-serif;
+}
+
 .introDesc {
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.8;
   color: #1a1a1a;
   text-align: center;
   margin: 0;
   letter-spacing: 0.05em;
+  font-family: "Noto Sans TC", Arial, sans-serif;
 }
 
 @media (max-width: 900px) {
@@ -339,6 +351,6 @@
   }
 
   .introDesc {
-    font-size: 14px;
+    font-size: 16px;
   }
 }

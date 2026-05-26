@@ -30,7 +30,7 @@ export default function Main() {
                         />
                         <button
                             className={`${styles.heroLink} ${styles.linkActivities}`}
-                            onClick={() => navigate('/event/event-intro')}
+                            onClick={() => navigate('/event/timeline')}
                             aria-label="系上活動"
                         />
                         <button
