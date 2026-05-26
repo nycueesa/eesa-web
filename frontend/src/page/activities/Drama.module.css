@@ -529,6 +529,7 @@
 }
 
 .photo11 {
+  display: none;
   position: absolute;
   right: 280px;
   top: 250px;

@@ -1,0 +1,419 @@
+.page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+}
+
+/* ===== 返回按鈕 ===== */
+.backLink {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d2b6a;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.backLink:hover {
+  color: #6b6fcf;
+  transform: translateX(-3px);
+}
+
+/* ===== 標題 ===== */
+.pageTitle {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1d2b6a;
+  margin: 24px 0 12px;
+}
+
+.titleDivider {
+  width: 100%;
+  height: 3px;
+  background-color: #1d2b6a;
+  margin-bottom: 36px;
+}
+
+/* ===== 隊伍照片 ===== */
+.photoContainer {
+  width: 100%;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.teamPhoto {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ===== 隊伍介紹 ===== */
+.introSection {
+  margin-bottom: 48px;
+}
+
+.introText {
+  font-size: 18px;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+/* ===== 通用 section ===== */
+.section {
+  margin-bottom: 56px;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d2b6a;
+  margin-bottom: 28px;
+}
+
+/* ===== 練習時間 ===== */
+.scheduleContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.scheduleText {
+  flex: 1;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #333;
+}
+
+.scheduleList {
+  list-style: none;
+  padding-left: 8px;
+  margin: 6px 0 12px;
+}
+
+.scheduleList li::before {
+  content: "- ";
+  color: #1d2b6a;
+}
+
+.ballIcon {
+  flex-shrink: 0;
+  align-self: center;
+  width: 110px;
+  height: 110px;
+}
+
+.ballImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== 活動介紹 ===== */
+.activityContainer {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  min-height: 420px;
+}
+
+/* --- 時間軸 --- */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 16px;
+  flex-shrink: 0;
+  width: 300px;
+  padding-bottom: 16px;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 22px;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  background-color: #1d2b6a;
+}
+
+.timelineArrow {
+  position: absolute;
+  left: 14px;
+  bottom: -2px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 14px solid #1d2b6a;
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.timelineDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border: 2px solid #1d2b6a;
+}
+
+.timelineCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 28px;
+  background-color: #d9dff5;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #1d2b6a;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-width: 220px;
+}
+
+.timelineMonth {
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.timelineName {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+/* Hover / Active 狀態 */
+.timelineItemActive .timelineDot {
+  background-color: #6b6fcf;
+  transform: scale(1.3);
+  border-color: #6b6fcf;
+}
+
+.timelineItemActive .timelineCard {
+  background-color: #1d2b6a;
+  color: #ffffff;
+}
+
+/* --- 右側詳細說明 --- */
+.activityDetail {
+  flex: 1;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 4px;
+}
+
+.detailContent {
+  animation: fadeIn 0.2s ease;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6b6fcf;
+  margin-bottom: 12px;
+}
+
+.detailDescBox {
+  border-radius: 10px;
+  padding: 18px 22px;
+  background-color: #2d3278;
+  margin-bottom: 16px;
+}
+
+.detailDesc {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.85;
+  color: #ffffff;
+  margin: 0;
+}
+
+.detailImage {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.detailPlaceholder {
+  color: #bbb;
+  font-size: 16px;
+  padding-top: 20px;
+}
+
+/* ===== 聯絡資訊 ===== */
+.contactInfo {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #333;
+}
+
+.contactPerson {
+  margin-bottom: 20px;
+}
+
+.contactPerson p {
+  margin: 0;
+}
+
+.contactNote {
+  margin-top: 16px;
+  font-weight: 600;
+  color: #1d2b6a;
+}
+
+.aboutImgContainer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutImg {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.notFound {
+  text-align: center;
+  padding: 80px 20px;
+  color: #1d2b6a;
+}
+
+/* ===== 上一支／下一支 ===== */
+.bottomNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #d9dff5;
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background-color: #d9dff5;
+  color: #1d2b6a;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navBtn:hover {
+  background-color: #1d2b6a;
+  color: #ffffff;
+}
+
+.navBtn:hover .navArrow {
+  transform: translateX(-3px);
+}
+
+.navBtnNext:hover .navArrow {
+  transform: translateX(3px);
+}
+
+.navArrow {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.navName {
+  white-space: nowrap;
+}
+
+.navSpacer {
+  display: block;
+}
+
+/* ===== RWD ===== */
+@media (max-width: 768px) {
+  .page {
+    padding: 24px 16px 60px;
+  }
+
+  .pageTitle {
+    font-size: 30px;
+  }
+
+  .sectionTitle {
+    font-size: 26px;
+  }
+
+  .introText,
+  .scheduleText,
+  .contactInfo {
+    font-size: 16px;
+  }
+
+  .scheduleContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ballIcon {
+    align-self: center;
+    width: 80px;
+    height: 80px;
+  }
+
+  .activityContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .timeline {
+    width: 100%;
+  }
+
+  .activityDetail {
+    min-height: auto;
+  }
+
+  .detailImage {
+    max-width: 100%;
+  }
+
+  .navBtn {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+}

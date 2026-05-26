@@ -17,6 +17,7 @@ import EventIntro from "./page/event/EventIntro.jsx"
 import NewInfo from "./page/event/NewInfo.jsx"
 import Timeline from "./page/event/Timeline.jsx"
 import Team from "./page/team/Team.jsx"
+import TeamDetail from "./page/team/TeamDetail.jsx"
 import PrevExam from "./page/resource/PrevExam.jsx"
 import Project from "./page/resource/Project.jsx"
 import Calendar from "./page/file/Calendar.jsx"
@@ -48,6 +49,9 @@ function App(){
 					<Route path="/event/timeline" element={<Timeline />} /> 
 
 					<Route path="/team" element={<Team />} />
+					<Route path="/team/:teamKey" element={<TeamDetail />} />
+
+
 
 					<Route path="/resource/prevexam" element={<PrevExam />} />
 					<Route path="/resource/project" element={<Project />} />
